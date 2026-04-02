@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -42,17 +43,17 @@
       <div class="row g-4 justify-content-center site-grid">
         <aside class="col-12 col-lg-4 col-xl-3">
           <div class="sidebar-panel sticky-lg-top">
+
             <div class="sidebar-intro mb-4">
-              <p class="eyebrow mb-2">Curriculum Vitae</p>
               <h1 class="site-name mb-2">Julien Rudmann</h1>
               <p class="site-description mb-0">
-                Senior software engineer with a background in astrophysics, scientific software,
-                and real-time transport systems.
+                Senior software engineer with a background in astrophysics, software engineering, and real-time transport systems.
               </p>
             </div>
 
             <nav class="nav flex-column sidebar-nav" aria-label="Main navigation">
-              <a class="nav-link{% if page.url == '/' or page.url == '/index.html' %} active{% endif %}" href="{{ '/index.html' | relative_url }}">Home</a>
+              <a class="nav-link{% if page.url == '/' or page.url == '/index.html' %} active{% endif %}" href="{{ '/index.html' | relative_url }}">Profile</a>
+              <a class="nav-link{% if page.url == '/experience.html' %} active{% endif %}" href="{{ '/experience.html' | relative_url }}">Experience</a>
               <a class="nav-link{% if page.url == '/passions.html' %} active{% endif %}" href="{{ '/passions.html' | relative_url }}">Passions</a>
             </nav>
 
