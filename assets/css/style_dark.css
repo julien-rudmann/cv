@@ -70,6 +70,10 @@ h4 {
   margin-top: 0;
 }
 
+.site-name {
+  white-space: nowrap;
+}
+
 .sidebar-nav .nav-link {
   color: var(--text);
   border: 1px solid var(--border);
