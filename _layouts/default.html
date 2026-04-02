@@ -1,115 +1,145 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if page.title %}{{ page.title }} | {% endif %}Julien Rudmann</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+    >
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     >
     <link id="theme-stylesheet" rel="stylesheet" href="{{ '/assets/css/style_light.css' | relative_url }}">
     <script>
-      (function () {
-        var themes = {
-          light: "{{ '/assets/css/style_light.css' | relative_url }}",
-          dark: "{{ '/assets/css/style_dark.css' | relative_url }}"
-        };
-        var theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
-        var link = document.getElementById('theme-stylesheet');
-        if (link) {
-          link.href = themes[theme];
-        }
-        document.documentElement.setAttribute('data-theme', theme);
-        window.cvTheme = {
-          get: function () { return theme; },
-          set: function (nextTheme) {
-            theme = nextTheme === 'dark' ? 'dark' : 'light';
-            localStorage.setItem('theme', theme);
-            document.documentElement.setAttribute('data-theme', theme);
+        (function () {
+            var themes = {
+                light: "{{ '/assets/css/style_light.css' | relative_url }}",
+                dark: "{{ '/assets/css/style_dark.css' | relative_url }}"
+            };
+            var theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+            var link = document.getElementById('theme-stylesheet');
             if (link) {
-              link.href = themes[theme];
+                link.href = themes[theme];
             }
-          }
-        };
-      }());
+            document.documentElement.setAttribute('data-theme', theme);
+            window.cvTheme = {
+                get: function () {
+                    return theme;
+                },
+                set: function (nextTheme) {
+                    theme = nextTheme === 'dark' ? 'dark' : 'light';
+                    localStorage.setItem('theme', theme);
+                    document.documentElement.setAttribute('data-theme', theme);
+                    if (link) {
+                        link.href = themes[theme];
+                    }
+                }
+            };
+        }());
     </script>
-  </head>
-  <body>
-    <div class="container-fluid py-4 py-lg-5">
-      <div class="row g-4 justify-content-center site-grid">
+</head>
+<body>
+<div class="container-fluid py-4 py-lg-5">
+    <div class="row g-4 justify-content-center site-grid">
         <aside class="col-12 col-lg-4 col-xl-3">
-          <div class="sidebar-panel sticky-lg-top">
+            <div class="sidebar-panel sticky-lg-top">
 
-            <div class="sidebar-intro mb-4">
-              <h1 class="site-name mb-2">Julien Rudmann</h1>
-              <p class="site-description mb-0">
-                Senior software engineer with a background in astrophysics, software engineering, and real-time transport systems.
-              </p>
+                <div class="sidebar-intro mb-4">
+                    <h1 class="site-name mb-2">Julien Rudmann</h1>
+                    <p class="site-description mb-0">
+                        Senior software engineer with a background in astrophysics, software engineering, and real-time
+                        transport systems.
+                    </p>
+                </div>
+
+                <nav class="nav flex-column sidebar-nav" aria-label="Main navigation">
+                    <a class="nav-link{% if page.url == '/' or page.url == '/index.html' %} active{% endif %}"
+                       href="{{ '/index.html' | relative_url }}">Profile</a>
+                    <a class="nav-link{% if page.url == '/experience.html' %} active{% endif %}"
+                       href="{{ '/experience.html' | relative_url }}">Experience</a>
+                    <a class="nav-link{% if page.url == '/passions.html' %} active{% endif %}"
+                       href="{{ '/passions.html' | relative_url }}">Passions</a>
+                </nav>
+
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch color theme">
+                    <span class="theme-toggle-label">Theme</span>
+                    <span class="theme-toggle-value">Light</span>
+                </button>
+
+                <hr class="sidebar-divider">
+
+                <div class="sidebar-links d-flex flex-wrap gap-3">
+                    <a class="contact-link" href="mailto:rudmann.julien@proton.me" aria-label="Email" title="Email">
+                        <i class="bi bi-envelope-fill contact-icon-font theme-light-asset" aria-hidden="true"></i>
+                        <i class="bi bi-envelope-fill contact-icon-font theme-dark-asset" aria-hidden="true"></i>
+                        <span class="visually-hidden">Email</span>
+                    </a>
+                    <a class="contact-link" href="https://github.com/julien-rudmann" aria-label="GitHub" title="GitHub">
+                        <img class="contact-icon-image theme-light-asset"
+                             src="{{ '/assets/logos/GitHub_Black.png' | relative_url }}" alt="" aria-hidden="true">
+                        <img class="contact-icon-image theme-dark-asset"
+                             src="{{ '/assets/logos/GitHub_White.png' | relative_url }}" alt="" aria-hidden="true">
+                        <span class="visually-hidden">GitHub</span>
+                    </a>
+                    <a class="contact-link" href="https://www.linkedin.com/in/julien-rudmann-38a46682/"
+                       aria-label="LinkedIn" title="LinkedIn">
+                        <img class="contact-icon-image theme-light-asset"
+                             src="{{ '/assets/logos/LinkedIn_Black.png' | relative_url }}" alt="" aria-hidden="true">
+                        <img class="contact-icon-image theme-dark-asset"
+                             src="{{ '/assets/logos/LinkedIn_White.png' | relative_url }}" alt="" aria-hidden="true">
+                        <span class="visually-hidden">LinkedIn</span>
+                    </a>
+                </div>
             </div>
-
-            <nav class="nav flex-column sidebar-nav" aria-label="Main navigation">
-              <a class="nav-link{% if page.url == '/' or page.url == '/index.html' %} active{% endif %}" href="{{ '/index.html' | relative_url }}">Profile</a>
-              <a class="nav-link{% if page.url == '/experience.html' %} active{% endif %}" href="{{ '/experience.html' | relative_url }}">Experience</a>
-              <a class="nav-link{% if page.url == '/passions.html' %} active{% endif %}" href="{{ '/passions.html' | relative_url }}">Passions</a>
-            </nav>
-
-            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch color theme">
-              <span class="theme-toggle-label">Theme</span>
-              <span class="theme-toggle-value">Light</span>
-            </button>
-
-            <hr class="sidebar-divider">
-
-            <div class="sidebar-links d-flex flex-wrap gap-3">
-              <a href="mailto:rudmann.julien@proton.me">Email</a>
-              <a href="https://github.com/julien-rudmann">GitHub</a>
-              <a href="https://www.linkedin.com/in/julien-rudmann-38a46682/">LinkedIn</a>
-            </div>
-          </div>
         </aside>
 
         <main class="col-12 col-lg-8 col-xl-7">
-          <div class="content-panel">
-            <header class="page-header mb-4">
-              <h2 class="page-title mb-1">{{ page.title }}</h2>
-              <p class="page-subtitle mb-0">{{ page.subtitle | default: 'A responsive Bootstrap-based GitHub Pages site.' }}</p>
-            </header>
+            <div class="content-panel">
 
-            {{ content }}
+                <header class="page-header mb-4">
+                    <h2 class="page-title mb-1">{{ page.title }}</h2>
+                    <p class="page-subtitle mb-0">{{ page.subtitle }}</p>
+                </header>
 
-            <footer class="page-footer mt-4 pt-3">
-              <small>Built for GitHub Pages with a shared Bootstrap layout.</small>
-            </footer>
-          </div>
+                {{ content }}
+
+                <footer class="page-footer mt-4 pt-3">
+                    <small>Built for GitHub Pages with a shared Bootstrap layout.</small>
+                </footer>
+            </div>
         </main>
-      </div>
     </div>
-    <script>
-      (function () {
+</div>
+<script>
+    (function () {
         var button = document.getElementById('theme-toggle');
         if (!button || !window.cvTheme) {
-          return;
+            return;
         }
         var value = button.querySelector('.theme-toggle-value');
+
         function syncButton() {
-          var current = window.cvTheme.get();
-          var label = current === 'dark' ? 'Dark' : 'Light';
-          button.setAttribute('aria-pressed', String(current === 'dark'));
-          if (value) {
-            value.textContent = label;
-          }
+            var current = window.cvTheme.get();
+            var label = current === 'dark' ? 'Dark' : 'Light';
+            button.setAttribute('aria-pressed', String(current === 'dark'));
+            if (value) {
+                value.textContent = label;
+            }
         }
+
         button.addEventListener('click', function () {
-          var next = window.cvTheme.get() === 'dark' ? 'light' : 'dark';
-          window.cvTheme.set(next);
-          syncButton();
+            var next = window.cvTheme.get() === 'dark' ? 'light' : 'dark';
+            window.cvTheme.set(next);
+            syncButton();
         });
         syncButton();
-      }());
-    </script>
-  </body>
+    }());
+</script>
+</body>
 </html>
