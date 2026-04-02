@@ -88,29 +88,29 @@ h4 {
 }
 
 .theme-toggle {
-  width: 100%;
-  display: flex;
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 0.5rem;
-  padding: 0.85rem 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 0;
   color: var(--text);
   background: var(--panel-2);
   border: 1px solid var(--border);
   border-radius: 12px;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .theme-toggle:hover {
+  color: var(--accent);
   border-color: var(--accent);
+  transform: translateY(-1px);
 }
 
-.theme-toggle-label {
-  font-weight: 600;
-}
-
-.theme-toggle-value {
-  color: var(--muted);
+.theme-icon {
+  font-size: 1.2rem;
+  line-height: 1;
 }
 
 .sidebar-divider {

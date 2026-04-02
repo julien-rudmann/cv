@@ -67,9 +67,11 @@
                        href="{{ '/passions.html' | relative_url }}">Passions</a>
                 </nav>
 
-                <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch color theme">
-                    <span class="theme-toggle-label">Theme</span>
-                    <span class="theme-toggle-value">Light</span>
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode"
+                        title="Switch to dark mode">
+                    <i class="bi bi-sun-fill theme-icon theme-light-asset" aria-hidden="true"></i>
+                    <i class="bi bi-moon-stars-fill theme-icon theme-dark-asset" aria-hidden="true"></i>
+                    <span class="visually-hidden theme-toggle-text">Switch theme</span>
                 </button>
 
                 <hr class="sidebar-divider">
@@ -122,14 +124,16 @@
         if (!button || !window.cvTheme) {
             return;
         }
-        var value = button.querySelector('.theme-toggle-value');
+        var text = button.querySelector('.theme-toggle-text');
 
         function syncButton() {
             var current = window.cvTheme.get();
-            var label = current === 'dark' ? 'Dark' : 'Light';
+            var nextLabel = current === 'dark' ? 'light' : 'dark';
             button.setAttribute('aria-pressed', String(current === 'dark'));
-            if (value) {
-                value.textContent = label;
+            button.setAttribute('aria-label', 'Switch to ' + nextLabel + ' mode');
+            button.setAttribute('title', 'Switch to ' + nextLabel + ' mode');
+            if (text) {
+                text.textContent = 'Switch to ' + nextLabel + ' mode';
             }
         }
 
