@@ -10,7 +10,32 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     >
-    <link rel="stylesheet" href="{{ '/assets/css/style_dark.css' | relative_url }}">
+    <link id="theme-stylesheet" rel="stylesheet" href="{{ '/assets/css/style_light.css' | relative_url }}">
+    <script>
+      (function () {
+        var themes = {
+          light: "{{ '/assets/css/style_light.css' | relative_url }}",
+          dark: "{{ '/assets/css/style_dark.css' | relative_url }}"
+        };
+        var theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+        var link = document.getElementById('theme-stylesheet');
+        if (link) {
+          link.href = themes[theme];
+        }
+        document.documentElement.setAttribute('data-theme', theme);
+        window.cvTheme = {
+          get: function () { return theme; },
+          set: function (nextTheme) {
+            theme = nextTheme === 'dark' ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+            document.documentElement.setAttribute('data-theme', theme);
+            if (link) {
+              link.href = themes[theme];
+            }
+          }
+        };
+      }());
+    </script>
   </head>
   <body>
     <div class="container-fluid py-4 py-lg-5">
@@ -30,6 +55,11 @@
               <a class="nav-link{% if page.url == '/' or page.url == '/index.html' %} active{% endif %}" href="{{ '/index.html' | relative_url }}">Home</a>
               <a class="nav-link{% if page.url == '/passions.html' %} active{% endif %}" href="{{ '/passions.html' | relative_url }}">Passions</a>
             </nav>
+
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch color theme">
+              <span class="theme-toggle-label">Theme</span>
+              <span class="theme-toggle-value">Light</span>
+            </button>
 
             <hr class="sidebar-divider">
 
@@ -57,5 +87,28 @@
         </main>
       </div>
     </div>
+    <script>
+      (function () {
+        var button = document.getElementById('theme-toggle');
+        if (!button || !window.cvTheme) {
+          return;
+        }
+        var value = button.querySelector('.theme-toggle-value');
+        function syncButton() {
+          var current = window.cvTheme.get();
+          var label = current === 'dark' ? 'Dark' : 'Light';
+          button.setAttribute('aria-pressed', String(current === 'dark'));
+          if (value) {
+            value.textContent = label;
+          }
+        }
+        button.addEventListener('click', function () {
+          var next = window.cvTheme.get() === 'dark' ? 'light' : 'dark';
+          window.cvTheme.set(next);
+          syncButton();
+        });
+        syncButton();
+      }());
+    </script>
   </body>
 </html>

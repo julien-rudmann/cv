@@ -85,6 +85,32 @@ h4 {
   transform: translateX(2px);
 }
 
+.theme-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  padding: 0.85rem 1rem;
+  color: var(--text);
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+}
+
+.theme-toggle-label {
+  font-weight: 600;
+}
+
+.theme-toggle-value {
+  color: var(--muted);
+}
+
 .sidebar-divider {
   border-color: var(--border);
   opacity: 1;
