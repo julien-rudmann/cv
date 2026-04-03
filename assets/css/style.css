@@ -7,6 +7,7 @@
   --border: #cbd5e1;
   --bg-start: #f8fafc;
   --bg-end: #e2e8f0;
+  --bs-body-color: #212529;
   --panel-bg: rgba(255, 255, 255, 0.94);
   --card-bg: rgba(248, 250, 252, 0.95);
   --highlight-bg: rgba(255, 255, 255, 0.7);
@@ -23,6 +24,7 @@
   --border: #1f2937;
   --bg-start: #020617;
   --bg-end: #0f172a;
+  --bs-body-color: #e5e7eb;
   --panel-bg: rgba(17, 24, 39, 0.92);
   --card-bg: rgba(11, 18, 32, 1);
   --highlight-bg: rgba(17, 24, 39, 0.7);
@@ -206,6 +208,10 @@ h4 {
   border-radius: 12px;
   padding: 16px;
   background: var(--card-bg);
+}
+
+.card ul li {
+  padding-right: 1rem;
 }
 
 .experience-card h3 {
