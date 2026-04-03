@@ -1,22 +1,10 @@
 ﻿(function () {
     var theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
 
-    function getThemeStylesheet() {
-        return document.getElementById('theme-stylesheet');
-    }
-
     function applyTheme(nextTheme) {
-        var link = getThemeStylesheet();
-        var lightHref = link ? link.dataset.lightHref : null;
-        var darkHref = link ? link.dataset.darkHref : null;
-
         theme = nextTheme === 'dark' ? 'dark' : 'light';
         localStorage.setItem('theme', theme);
         document.documentElement.setAttribute('data-theme', theme);
-
-        if (link) {
-            link.href = theme === 'dark' ? darkHref : lightHref;
-        }
     }
 
     applyTheme(theme);

@@ -8,7 +8,7 @@
     <title>{% if page.title %}{{ page.title }} | {% endif %}Julien Rudmann</title>
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link href="{{ '/assets/css/style_light.css' | relative_url }}"  data-dark-href="{{ '/assets/css/style_dark.css' | relative_url }}" data-light-href="{{ '/assets/css/style_light.css' | relative_url }}" id="theme-stylesheet" rel="stylesheet">
+    <link href="{{ '/assets/css/style.css' | relative_url }}" rel="stylesheet">
     <script src="{{ '/assets/js/theme_changer.js' | relative_url }}"></script>
 </head>
 
@@ -52,6 +52,8 @@
                     <a class="nav-link{% if page.url == '/experiences.html' %} active{% endif %}" href="{{ '/experiences.html' | relative_url }}">Experiences</a>
                     <a class="nav-link{% if page.url == '/skills.html' %} active{% endif %}" href="{{ '/skills.html' | relative_url }}">Skills</a>
                     <a class="nav-link{% if page.url == '/passions.html' %} active{% endif %}" href="{{ '/passions.html' | relative_url }}">Passions</a>
+                    <a class="nav-link{% if page.url == '/references.html' %} active{% endif %}" href="{{ '/references.html' | relative_url }}">Passions</a>
+                    <a class="nav-link{% if page.url == '/projects.html' %} active{% endif %}" href="{{ '/projects.html' | relative_url }}">Passions</a>
                 </nav>
             </div>
         </aside>

@@ -1,17 +1,39 @@
 :root {
-  --bg: #f8fafc;
   --panel: #ffffff;
   --panel-2: #f8fafc;
   --text: #0f172a;
   --muted: #475569;
   --accent: #0284c7;
   --border: #cbd5e1;
+  --bg-start: #f8fafc;
+  --bg-end: #e2e8f0;
+  --panel-bg: rgba(255, 255, 255, 0.94);
+  --card-bg: rgba(248, 250, 252, 0.95);
+  --highlight-bg: rgba(255, 255, 255, 0.7);
+  --hero-gradient: linear-gradient(135deg, rgba(2, 132, 199, 0.12), rgba(255, 255, 255, 0.94));
+  --control-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+}
+
+[data-theme="dark"] {
+  --panel: #111827;
+  --panel-2: #0b1220;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --border: #1f2937;
+  --bg-start: #020617;
+  --bg-end: #0f172a;
+  --panel-bg: rgba(17, 24, 39, 0.92);
+  --card-bg: rgba(11, 18, 32, 1);
+  --highlight-bg: rgba(17, 24, 39, 0.7);
+  --hero-gradient: linear-gradient(135deg, rgba(56, 189, 248, 0.16), rgba(17, 24, 39, 0.92));
+  --control-shadow: 0 10px 30px rgba(2, 6, 23, 0.35);
 }
 
 body {
   margin: 0;
   font-family: Inter, Arial, Helvetica, sans-serif;
-  background: linear-gradient(180deg, #f8fafc, #e2e8f0);
+  background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
   color: var(--text);
   line-height: 1.6;
 }
@@ -33,7 +55,7 @@ a:hover {
 .sidebar-panel,
 .content-panel,
 .card {
-  background: rgba(255, 255, 255, 0.94);
+  background: var(--panel-bg);
   border: 1px solid var(--border);
   border-radius: 16px;
 }
@@ -49,6 +71,7 @@ a:hover {
   border-radius: 0;
   padding: 24px;
   margin-bottom: 20px;
+  text-align: justify;
 }
 
 .content-section:last-child {
@@ -59,7 +82,9 @@ a:hover {
 .muted,
 .site-description,
 .page-subtitle,
-.page-footer {
+.page-footer,
+.company-logo,
+.experience-meta {
   color: var(--muted);
 }
 
@@ -91,32 +116,6 @@ h4 {
   transform: translateX(2px);
 }
 
-.theme-toggle {
-  width: 52px;
-  height: 52px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  color: var(--text);
-  background: var(--panel-2);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
-  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
-.theme-toggle:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-  transform: translateY(-1px);
-}
-
-.theme-icon {
-  font-size: 1.2rem;
-  line-height: 1;
-}
-
 .top-right-controls {
   position: fixed;
   top: 24px;
@@ -131,17 +130,40 @@ h4 {
   align-items: center;
 }
 
+.theme-toggle,
 .contact-link {
   width: 52px;
   height: 52px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--muted);
+  padding: 0;
   background: var(--panel-2);
   border: 1px solid var(--border);
   border-radius: 12px;
+  box-shadow: var(--control-shadow);
   transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle {
+  color: var(--text);
+}
+
+.contact-link {
+  color: var(--muted);
+}
+
+.theme-toggle:hover,
+.contact-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.theme-icon {
+  font-size: 1.2rem;
+  line-height: 1;
 }
 
 .contact-icon-font {
@@ -163,15 +185,16 @@ h4 {
   display: block;
 }
 
-.contact-link:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-  text-decoration: none;
-  transform: translateY(-1px);
+[data-theme="dark"] .theme-light-asset {
+  display: none;
+}
+
+[data-theme="dark"] .theme-dark-asset {
+  display: block;
 }
 
 .hero-section {
-  background: linear-gradient(135deg, rgba(2, 132, 199, 0.12), rgba(255, 255, 255, 0.94));
+  background: var(--hero-gradient);
 }
 
 .card-list {
@@ -182,16 +205,11 @@ h4 {
 .card {
   border-radius: 12px;
   padding: 16px;
-  background: rgba(248, 250, 252, 0.95);
+  background: var(--card-bg);
 }
 
 .experience-card h3 {
   margin-bottom: 0.35rem;
-}
-
-.company-logo,
-.experience-meta {
-  color: var(--muted);
 }
 
 .company-logo {
@@ -208,7 +226,7 @@ h4 {
   padding: 1rem;
   border: 1px solid var(--border);
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--highlight-bg);
 }
 
 .experience-list {
