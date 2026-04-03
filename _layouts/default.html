@@ -1,49 +1,17 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>{% if page.title %}{{ page.title }} | {% endif %}Julien Rudmann</title>
-    <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-            crossorigin="anonymous"
-    >
-    <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    >
-    <link id="theme-stylesheet" rel="stylesheet" href="{{ '/assets/css/style_light.css' | relative_url }}">
-    <script>
-        (function () {
-            var themes = {
-                light: "{{ '/assets/css/style_light.css' | relative_url }}",
-                dark: "{{ '/assets/css/style_dark.css' | relative_url }}"
-            };
-            var theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
-            var link = document.getElementById('theme-stylesheet');
-            if (link) {
-                link.href = themes[theme];
-            }
-            document.documentElement.setAttribute('data-theme', theme);
-            window.cvTheme = {
-                get: function () {
-                    return theme;
-                },
-                set: function (nextTheme) {
-                    theme = nextTheme === 'dark' ? 'dark' : 'light';
-                    localStorage.setItem('theme', theme);
-                    document.documentElement.setAttribute('data-theme', theme);
-                    if (link) {
-                        link.href = themes[theme];
-                    }
-                }
-            };
-        }());
-    </script>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="{{ '/assets/css/style_light.css' | relative_url }}"  data-dark-href="{{ '/assets/css/style_dark.css' | relative_url }}" data-light-href="{{ '/assets/css/style_light.css' | relative_url }}" id="theme-stylesheet" rel="stylesheet">
+    <script src="{{ '/assets/js/theme_changer.js' | relative_url }}"></script>
 </head>
+
 <body>
 <div class="container-fluid py-4 py-lg-5">
     <div class="row g-4 justify-content-center site-grid">
@@ -52,51 +20,44 @@
 
                 <div class="sidebar-intro mb-4">
                     <h1 class="site-name mb-2">Julien Rudmann</h1>
-                    <p class="site-description mb-0">
-                        Senior software engineer with a background in astrophysics, software engineering, and real-time
-                        transport systems.
-                    </p>
+                    <p class="site-description mb-0">Senior software engineer with a background in astrophysics, software engineering, and real-time transport systems.</p>
                 </div>
 
-                <nav class="nav flex-column sidebar-nav" aria-label="Main navigation">
-                    <a class="nav-link{% if page.url == '/' or page.url == '/index.html' %} active{% endif %}"
-                       href="{{ '/index.html' | relative_url }}">Profile</a>
-                    <a class="nav-link{% if page.url == '/experience.html' %} active{% endif %}"
-                       href="{{ '/experience.html' | relative_url }}">Experience</a>
-                    <a class="nav-link{% if page.url == '/passions.html' %} active{% endif %}"
-                       href="{{ '/passions.html' | relative_url }}">Passions</a>
+                <nav aria-label="Main navigation" class="nav flex-column sidebar-nav">
+                    <a class="nav-link{% if page.url == '/' or page.url == '/index.html' %} active{% endif %}" href="{{ '/index.html' | relative_url }}">Profile</a>
+                    <a class="nav-link{% if page.url == '/experiences.html' %} active{% endif %}" href="{{ '/experiences.html' | relative_url }}">Experiences</a>
+                    <a class="nav-link{% if page.url == '/skills.html' %} active{% endif %}" href="{{ '/skills.html' | relative_url }}">Skills</a>
+                    <a class="nav-link{% if page.url == '/passions.html' %} active{% endif %}" href="{{ '/passions.html' | relative_url }}">Passions</a>
                 </nav>
-
-                <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode"
-                        title="Switch to dark mode">
-                    <i class="bi bi-sun-fill theme-icon theme-light-asset" aria-hidden="true"></i>
-                    <i class="bi bi-moon-stars-fill theme-icon theme-dark-asset" aria-hidden="true"></i>
-                    <span class="visually-hidden theme-toggle-text">Switch theme</span>
-                </button>
 
                 <hr class="sidebar-divider">
 
                 <div class="sidebar-links d-flex flex-wrap gap-3">
-                    <a class="contact-link" href="mailto:rudmann.julien@proton.me" aria-label="Email" title="Email">
-                        <i class="bi bi-envelope-fill contact-icon-font theme-light-asset" aria-hidden="true"></i>
-                        <i class="bi bi-envelope-fill contact-icon-font theme-dark-asset" aria-hidden="true"></i>
+                    <a aria-label="Email" class="contact-link" href="mailto:rudmann.julien@proton.me" title="Email">
+                        <i aria-hidden="true" class="bi bi-envelope-fill contact-icon-font theme-light-asset"></i>
+                        <i aria-hidden="true" class="bi bi-envelope-fill contact-icon-font theme-dark-asset"></i>
                         <span class="visually-hidden">Email</span>
                     </a>
-                    <a class="contact-link" href="https://github.com/julien-rudmann" aria-label="GitHub" title="GitHub">
-                        <img class="contact-icon-image theme-light-asset"
-                             src="{{ '/assets/logos/GitHub_Black.png' | relative_url }}" alt="" aria-hidden="true">
-                        <img class="contact-icon-image theme-dark-asset"
-                             src="{{ '/assets/logos/GitHub_White.png' | relative_url }}" alt="" aria-hidden="true">
+                    <a aria-label="GitHub" class="contact-link" href="https://github.com/julien-rudmann" title="GitHub">
+                        <img alt=""
+                             aria-hidden="true" class="contact-icon-image theme-light-asset" src="{{ '/assets/logos/GitHub_Black.png' | relative_url }}">
+                        <img alt=""
+                             aria-hidden="true" class="contact-icon-image theme-dark-asset" src="{{ '/assets/logos/GitHub_White.png' | relative_url }}">
                         <span class="visually-hidden">GitHub</span>
                     </a>
-                    <a class="contact-link" href="https://www.linkedin.com/in/julien-rudmann-38a46682/"
-                       aria-label="LinkedIn" title="LinkedIn">
-                        <img class="contact-icon-image theme-light-asset"
-                             src="{{ '/assets/logos/LinkedIn_Black.png' | relative_url }}" alt="" aria-hidden="true">
-                        <img class="contact-icon-image theme-dark-asset"
-                             src="{{ '/assets/logos/LinkedIn_White.png' | relative_url }}" alt="" aria-hidden="true">
+                    <a aria-label="LinkedIn" class="contact-link"
+                       href="https://www.linkedin.com/in/julien-rudmann-38a46682/" title="LinkedIn">
+                        <img alt=""
+                             aria-hidden="true" class="contact-icon-image theme-light-asset" src="{{ '/assets/logos/LinkedIn_Black.png' | relative_url }}">
+                        <img alt=""
+                             aria-hidden="true" class="contact-icon-image theme-dark-asset" src="{{ '/assets/logos/LinkedIn_White.png' | relative_url }}">
                         <span class="visually-hidden">LinkedIn</span>
                     </a>
+                    <button aria-label="Switch display mode" class="theme-toggle" id="theme-toggle" title="Switch display mode" type="button">
+                        <i aria-hidden="true" class="bi bi-sun-fill theme-icon theme-light-asset"></i>
+                        <i aria-hidden="true" class="bi bi-moon-stars-fill theme-icon theme-dark-asset"></i>
+                        <span class="visually-hidden theme-toggle-text">Switch theme</span>
+                    </button>
                 </div>
             </div>
         </aside>
@@ -118,32 +79,5 @@
         </main>
     </div>
 </div>
-<script>
-    (function () {
-        var button = document.getElementById('theme-toggle');
-        if (!button || !window.cvTheme) {
-            return;
-        }
-        var text = button.querySelector('.theme-toggle-text');
-
-        function syncButton() {
-            var current = window.cvTheme.get();
-            var nextLabel = current === 'dark' ? 'light' : 'dark';
-            button.setAttribute('aria-pressed', String(current === 'dark'));
-            button.setAttribute('aria-label', 'Switch to ' + nextLabel + ' mode');
-            button.setAttribute('title', 'Switch to ' + nextLabel + ' mode');
-            if (text) {
-                text.textContent = 'Switch to ' + nextLabel + ' mode';
-            }
-        }
-
-        button.addEventListener('click', function () {
-            var next = window.cvTheme.get() === 'dark' ? 'light' : 'dark';
-            window.cvTheme.set(next);
-            syncButton();
-        });
-        syncButton();
-    }());
-</script>
 </body>
 </html>
