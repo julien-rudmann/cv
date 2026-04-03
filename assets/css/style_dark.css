@@ -97,10 +97,6 @@ h4 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  top: 24px;
-  right: 24px;
-  z-index: 1030;
   padding: 0;
   color: var(--text);
   background: var(--panel-2);
@@ -121,10 +117,14 @@ h4 {
   line-height: 1;
 }
 
-.sidebar-divider {
-  border-color: var(--border);
-  opacity: 1;
-  margin: 1.5rem 0;
+.top-right-controls {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 1030;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .sidebar-links {
@@ -132,8 +132,8 @@ h4 {
 }
 
 .contact-link {
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -236,9 +236,10 @@ h4 {
 }
 
 @media (max-width: 640px) {
-  .theme-toggle {
+  .top-right-controls {
     top: 16px;
     right: 16px;
+    gap: 8px;
   }
 
   .sidebar-panel,
