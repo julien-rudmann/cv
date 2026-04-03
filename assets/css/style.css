@@ -210,6 +210,11 @@ h4 {
   background: var(--card-bg);
 }
 
+.card ul {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .card ul li {
   padding-right: 1rem;
 }
@@ -224,15 +229,20 @@ h4 {
 }
 
 .experience-meta {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.1rem;
 }
 
 .experience-highlight {
-  margin: 1rem 0;
+  margin: 0.25rem 0 0.25rem 0;
   padding: 1rem;
   border: 1px solid var(--border);
   border-radius: 12px;
   background: var(--highlight-bg);
+}
+
+.experience-highlight h3
+{
+  font-size: 1.25rem;
 }
 
 .experience-list {
@@ -246,7 +256,7 @@ h4 {
 .tag-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
