@@ -494,7 +494,7 @@
         button.setAttribute('title', canToggle ? 'Switch language to ' + nextLanguage.toUpperCase() : 'Single language available');
 
         if (label) {
-            label.textContent = currentLanguage.toUpperCase();
+            label.textContent = nextLanguage.toUpperCase();
         }
 
         if (text) {
