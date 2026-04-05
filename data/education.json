@@ -1,0 +1,65 @@
+{
+  "name": "education",
+  "layout": "default",
+  "content": {
+    "en": {
+      "page": {
+        "tab": "Education",
+        "title": "Education",
+        "subtitle": "Education and training."
+      },
+      "text": [],
+      "articles": [
+        {
+          "title": "Master's Degree <b>Space Engineering and Instrumentation</b>",
+          "company": "Paul Sabatier University",
+          "duration": "2012",
+          "location": "Toulouse, France",
+          "description": "Focused on Astrophysics, Space Engineering and Instrumentation, the purpose of this master is to prepare students with a strong background in physics to become engineers in the space domain.",
+          "achievements": [],
+          "skills": [
+            "Optics",
+            "Electronics",
+            "Astrophysics",
+            "Cryogenics",
+            "Astronomy",
+            "Computer Science"
+          ],
+          "highlights": []
+        },
+        {
+          "title": "Bachelor's Degree <b>Fundamental Physics</b>",
+          "company": "Paul Sabatier University",
+          "duration": "2010",
+          "location": "Toulouse, France",
+          "description": "Aimed at the study of modern fundamental physics, theories and applications.",
+          "achievements": [],
+          "skills": [
+            "Optics",
+            "Electromagnetism",
+            "Quantum mechanics",
+            "Non-Linear Physics",
+            "Fluid mechanics",
+            "Nuclear physics"
+          ],
+          "highlights": []
+        },
+        {
+          "title": "Baccalaureate (A-levels) in <b>Science</b>",
+          "company": "Saint-Sernin High School",
+          "duration": "2006",
+          "location": "Toulouse, France",
+          "description": "Scientific branch of the French Baccalaureate, covering a wide range of scientific disciplines.",
+          "achievements": [],
+          "skills": [
+            "Mathematics",
+            "Physics",
+            "Chemistry",
+            "Biology",
+            "Technologies"
+          ]
+        }
+      ]
+    }
+  }
+}

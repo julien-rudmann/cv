@@ -1,10 +1,13 @@
 {
-  "page": "experience",
+  "name": "experience",
   "layout": "default",
-  "title": "Work Experience",
-  "subtitle": "Professional experience in software engineering, data processing, and space technologies.",
   "content": {
     "en": {
+      "page": {
+        "tab": "Work Experiences",
+        "title": "Work Experiences",
+        "subtitle": "Professional experiences in software engineering, data processing, and space technologies."
+      },
       "text": [],
       "articles": [
         {

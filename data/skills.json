@@ -1,0 +1,137 @@
+{
+  "name": "skills",
+  "layout": "default",
+  "content": {
+    "en": {
+      "page": {
+        "tab": "Skills",
+        "title": "Skills",
+        "subtitle": "Professional skills and technical expertises."
+      },
+      "text": [],
+      "articles": [
+        {
+          "title": "Core Programming Languages",
+          "skills": [
+            "C/C++",
+            "Python",
+            "Java",
+            "Bash/Shell",
+            "SQL",
+            "HTML/CSS",
+            "JavaScript",
+            "IDL/MATLAB",
+            "Agentic"
+          ]
+        },
+        {
+          "title": "Systems and Applications",
+          "skills": [
+            "Backend Services",
+            "REST API Servers",
+            "Data Pipelines",
+            "Visualization Tools",
+            "Automated Scripts",
+            "Encoding/Decoding Algorithms",
+            "Regression Tests"
+          ]
+        },
+        {
+          "title": "Frameworks and Methodologies",
+          "skills": [
+            "Test-driven Development",
+            "Oriented Object",
+            "CMake",
+            "Qt",
+            "Venv",
+            "Pip",
+            "Pandas",
+            "NumPy",
+            "Pyscript",
+            "Streamlit",
+            "Pytest",
+            "Maven",
+            "Spring Boot",
+            "OpenAPI",
+            "Swagger",
+            "Unreal Engine 5"
+          ]
+        },
+        {
+          "title": "Development Tools",
+          "skills": [
+            "QtCreator",
+            "Visual Studio Code",
+            "Jetbrains IDEs",
+            "Unreal Engine Editor"
+          ]
+        },
+        {
+          "title": "Technologies and Services",
+          "skills": [
+            "Docker",
+            "AWS S3",
+            "CI/CD",
+            "Git",
+            "PostgreSQL",
+            "SQlite",
+            "Protocol Buffers",
+            "Google Charts",
+            "Redis",
+            "Airflow",
+            "Postman",
+            "Unix"
+          ]
+        },
+        {
+          "title": "Team Cooperation",
+          "skills": [
+            "Agile/Scrum",
+            "Confluence",
+            "Jira",
+            "GitHub/GitLab",
+            "Code Reviews",
+            "Slack",
+            "Microsoft Teams"
+          ]
+        },
+        {
+          "title": "Documentation",
+          "skills": [
+            "Doxygen",
+            "Markdown",
+            "Pydoc",
+            "Javadoc",
+            "Confluence",
+            "Jira",
+            "LaTeX",
+            "Microsoft Suite"
+          ]
+        },
+        {
+          "title": "Science",
+          "skills": [
+            "Physics",
+            "Optics",
+            "Electronics",
+            "Cryogenics",
+            "Astronomy",
+            "Space Science"
+          ]
+        },
+        {
+          "title": "Social",
+          "skills": [
+            "Cooperative",
+            "Communicative",
+            "Organized",
+            "Innovative",
+            "Supportive",
+            "Resourceful"
+          ]
+        }
+      ]
+    }
+  }
+
+}

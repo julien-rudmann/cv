@@ -1,10 +1,15 @@
 {
-  "page": "profile",
+  "name": "profile",
   "layout": "default",
   "title": "About me.",
   "subtitle": "",
   "content": {
     "en": {
+      "page": {
+        "tab": "Profile",
+        "title": "About me",
+        "subtitle": ""
+      },
       "text": [
         "From an early age, I have been passionate about space, technologies, and computer science.",
         "Born in Toulouse (southern France) — a city renowned for aerospace and astrophysics — I pursued a Master’s degree in <b>Space Engineering and Instrumentation</b> at <a href=\"https://www.univ-tlse2.fr/en/\">Paul Sabatier University</a>.",
@@ -16,6 +21,11 @@
       ]
     },
     "fr": {
+      "page": {
+        "tab": "Profil",
+        "title": "A propos.",
+        "subtitle": ""
+      },
       "text": [
         "Depuis mon plus jeune âge, je suis passionné par l’espace, les nouvelles technologies et la programmation.",
         "Né à Toulouse (sud de la France) — une ville réputée pour l’aéronautique et l’astrophysique — j’ai suivi un Master en <b>Techniques Spatiales et Instrumentation</b> à l’<a href=\"https://www.univ-tlse2.fr/en/\">Université Paul Sabatier</a>.",
