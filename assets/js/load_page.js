@@ -57,7 +57,7 @@
 
     // Returns the data file path relative to the site root.
     function getDataUrl(pageId) {
-        return 'assets/data/' + pageId + '.json';
+        return 'data/' + pageId + '.json';
     }
 
     // Lists the languages actually present in the JSON payload.
