@@ -1,0 +1,127 @@
+{
+  "page": "experience",
+  "layout": "default",
+  "title": "Work Experience",
+  "subtitle": "Professional experience in software engineering, data processing, and space technologies.",
+  "content": {
+    "en": {
+      "text": [],
+      "articles": [
+        {
+          "title": "Senior Software Developer Full Stack",
+          "company": "<a href=\"https://remote.com/\">Remote</a> · Full-time",
+          "duration": "Jul 2022 – Present",
+          "location": "Haute-Savoie, France",
+          "description": "",
+          "achievements": [
+            "Employed through Remote since July 2022, continuing my work for Ito World from the Geneva area while further developing experience in remote <b>collaboration</b> and <b>international</b> software delivery."
+          ],
+          "skills": [
+            "Slack",
+            "Microsoft Teams",
+            "Agile/Scrum",
+            "Confluence",
+            "Jira"
+          ],
+          "highlights": []
+        },
+        {
+          "title": "Senior Software Developer Full Stack",
+          "company": "<a href=\"https://www.itoworld.com/\">Ito World</a> · Full-time",
+          "duration": "Nov 2016 – Present",
+          "location": "Cambridge, United Kingdom",
+          "description": "",
+          "achievements": [
+            "Developed and maintained <b>scalable, efficient, and reliable</b> applications in <b>Python, Java, and C++</b> for several of Ito World’s products, used across multiple cities and countries, with a focus on <b>real-time passenger information</b> and <b>standards-based mobility data processing</b>.",
+            "Built a <b>C++ pipeline</b> application that ingests data from real-time feed sources and archives data to <b>AWS S3</b> for analysis, historical replay, and reproducibility.",
+            "Improved and maintained a core <b>C++ real-time data pipeline</b> that ingests real-time transit feeds such as <b>trip predictions</b>, <b>vehicle positions</b>, and <b>service disruptions</b>, associates them with scheduled timetable data, and publishes <b>GTFS-RT</b> updates for downstream products and customer integrations.",
+            "Designed and implemented a <b>C++ REST API server</b> connected to the core real-time platform, exposing <b>SIRI-compliant</b> endpoints and subscription workflows for customer-facing systems powering <b>arrival and departure boards</b> in several locations in the United Kingdom.",
+            "Contributed to a worldwide <b>bikeshare platform</b> combining a <b>C++ feed-ingestion pipeline</b>, a <b>Django backend</b>, and an <b>Angular frontend</b> for availability, pricing, and reservation data.",
+            "Added and maintained <b>unit tests</b> for C++ components using <b>Google Test</b> and <b>Google Mock</b> frameworks, improving code <b>reliability, test coverage, and maintainability</b>."
+          ],
+          "skills": [
+            "C++",
+            "Python",
+            "Java",
+            "CI/CD",
+            "GitLab",
+            "AWS S3",
+            "Redis",
+            "PostgreSQL",
+            "Docker"
+          ],
+          "highlights": [
+            {
+              "title": "<a href=\"https://gtfs.org/documentation/realtime/reference/\">GTFS-RT</a>",
+              "description": "A GTFS Realtime feed lets transit agencies provide consumers with realtime information about disruptions to their service (stations closed, lines not operating, important delays, etc.) location of their vehicles, and expected arrival times."
+            },
+            {
+              "title": "<a href=\"https://transmodel-cen.eu/index.php/siri/\">SIRI</a>",
+              "description": "SIRI (Standard Interface for Real-time Information) is a standard for real-time information exchange between public transport operators and passengers. It provides a common interface for real-time data such as vehicle locations, service alerts, and passenger information."
+            }
+          ]
+        },
+        {
+          "title": "Junior Software Developer",
+          "company": "<a href=\"https://www.irap.omp.eu/en/homepage-en/\">IRAP</a> · Contractor",
+          "duration": "Oct 2012 - Nov 2016 · 4 yrs 2 mos",
+          "location": "Toulouse, France",
+          "description": "",
+          "achievements": [
+            "Developed and maintained <b>ground segment software</b> in <b>C++</b> using an <b>object-oriented</b> approach for the <b>XGRE</b> and <b>IDEE</b> instruments of the TARANIS scientific satellite mission.",
+            "Used <b>Valgrind</b> and <b>GDB</b> to analyze, debug, and improve the <b>performance</b> and <b>reliability</b> of software components.",
+            "Processed and recorded instrument data into <b>CDF (Common Data Format)</b> files defined by <b>NASA</b>.",
+            "Designed shared source code and common libraries to support the parallel development of XGRE and IDEE software, improving <b>code reusability</b> and <b>maintainability</b>.",
+            "Developed <b>graphical user interfaces</b> in <b>IDL</b> using an object-oriented approach to support payload integration, operational activities, data visualization, and scientific testing.",
+            "Contributed to the <b>integration activities</b> of the IDEE instrument, including work in <b>clean-room environments</b> with integration teams to deliver practical and intuitive tooling.",
+            "Ensured compliance with <b>CNES coding standards</b> and authored <b>user manuals</b> for delivered software."
+          ],
+          "skills": [
+            "C++",
+            "IDL",
+            "Valgrind",
+            "GDB",
+            "CDF"
+          ],
+          "highlights": [
+            {
+              "title": "<a href=\"https://cnes.fr/projets/taranis\">TARANIS</a>",
+              "description": "TARANIS was intended to be the first satellite dedicated to the observation and characterization of the luminous, radiative, and electromagnetic phenomena that occur between 20 and 100 km of altitude above thunderstorms. Its launch by the Vega rocket from the Kourou spaceport unfortunately failed on November 17, 2020."
+            },
+            {
+              "title": "<a href=\"https://cdf.gsfc.nasa.gov/\">CDF</a>",
+              "description": "CDF (Common Data Format) is a standard format for scientific data developed by NASA. It is widely used in the space science community for data exchange and archiving."
+            }
+          ]
+        },
+        {
+          "title": "Student Internship",
+          "company": "CNES",
+          "location": "Toulouse, France",
+          "duration": "Mar 2012 - Sep 2012 · 7 mos",
+          "description": "",
+          "achievements": [
+            "Developed a <b>stabilized laser prototype</b> for rubidium <b>atom cooling</b> as part of the <b>STE-QUEST</b> mission, supporting the development of an <b>atomic interferometer</b> source.",
+            "Designed, assembled, and characterized a <b>state-of-the-art optical</b> bench for <b>injection locking</b> of laser sources.",
+            "Studied and characterized a PPLN (Periodically Poled Lithium Niobate) crystal for <b>non-linear wavelength conversion</b> and laser frequency doubling.",
+            "Designed an electronic <b>PID servo system</b> to stabilize the frequency of the master laser source by correcting shifts caused by <b>temperature, current, and voltage variations</b>.",
+            "Contributed to experimental work combining <b>optics, electronics, and laser stabilization</b> in a space-research context."
+          ],
+          "skills": [
+            "Physics",
+            "Optics",
+            "Electronics",
+            "Microsoft Suite",
+            "LaTeX"
+          ],
+          "highlights": [
+            {
+              "title": "<a href=\"https://fr.wikipedia.org/wiki/STE-QUEST\">STE-QUEST</a>",
+              "description": "Space-Time Explorer and Quantum Equivalence Principle Space Test (STE-QUEST) was a proposed satellite mission to test the Einstein Equivalence Principle to high precision and search for new fundamental constituents and interactions in the Universe. It was supposed to contain an atom interferometer."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

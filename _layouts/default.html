@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="{{ '/assets/css/style.css' | relative_url }}" rel="stylesheet">
     <script src="{{ '/assets/js/theme_changer.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/load_page.js' | relative_url }}"></script>
 </head>
 
 <body>
@@ -31,6 +32,10 @@
             <span class="visually-hidden">LinkedIn</span>
         </a>
     </div>
+    <button aria-label="Switch language" class="language-toggle" disabled id="language-toggle" title="Switch language" type="button">
+        <span aria-hidden="true" class="language-toggle-label">EN</span>
+        <span class="visually-hidden language-toggle-text">Switch language</span>
+    </button>
     <button aria-label="Switch display mode" class="theme-toggle" id="theme-toggle" title="Switch display mode" type="button">
         <i aria-hidden="true" class="bi bi-moon-stars-fill theme-icon theme-light-asset"></i>
         <i aria-hidden="true" class="bi bi-sun-fill theme-icon theme-dark-asset"></i>
@@ -67,7 +72,7 @@
                     <p class="page-subtitle mb-0">{{ page.subtitle }}</p>
                 </header>
 
-                {{ content }}
+                <div id="page-content"></div>
 
                 <footer class="page-footer mt-4 pt-3">
                     <small>Built for GitHub Pages with a shared Bootstrap layout.</small>
