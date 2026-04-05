@@ -1,0 +1,24 @@
+{
+  "name": "projects",
+  "layout": "default",
+  "content": {
+    "en": {
+      "page": {
+        "tab": "Projects",
+        "title": "Projects"
+      },
+      "text": [
+        "TODO EN Projects"
+      ]
+    },
+    "fr": {
+      "page": {
+        "tab": "Projets",
+        "title": "Projets"
+      },
+      "text": [
+        "TODO FR Projets"
+      ]
+    }
+  }
+}

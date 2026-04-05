@@ -126,12 +126,139 @@
             "Communicative",
             "Organized",
             "Innovative",
-            "Supportive",
             "Resourceful"
+          ]
+        }
+      ]
+    },
+    "fr": {
+      "page": {
+        "tab": "Compétences",
+        "title": "Compétences",
+        "subtitle": "Compétences professionnelles et expertise techniques."
+      },
+      "text": [],
+      "articles": [
+        {
+          "title": "Langage de programmation",
+          "skills": [
+            "C/C++",
+            "Python",
+            "Java",
+            "Bash/Shell",
+            "SQL",
+            "HTML/CSS",
+            "JavaScript",
+            "IDL/MATLAB",
+            "Agentic"
+          ]
+        },
+        {
+          "title": "Systèmes et Applications",
+          "skills": [
+            "Backend Services",
+            "REST API Servers",
+            "Data Pipelines",
+            "Visualization Tools",
+            "Automated Scripts",
+            "Encoding/Decoding Algorithms",
+            "Regression Tests"
+          ]
+        },
+        {
+          "title": "Frameworks and Méthodologies",
+          "skills": [
+            "Test-driven Development",
+            "Oriented Object",
+            "CMake",
+            "Qt",
+            "Venv",
+            "Pip",
+            "Pandas",
+            "NumPy",
+            "Pyscript",
+            "Streamlit",
+            "Pytest",
+            "Maven",
+            "Spring Boot",
+            "OpenAPI",
+            "Swagger",
+            "Unreal Engine 5"
+          ]
+        },
+        {
+          "title": "Development Tools",
+          "skills": [
+            "QtCreator",
+            "Visual Studio Code",
+            "Jetbrains IDEs",
+            "Unreal Engine Editor"
+          ]
+        },
+        {
+          "title": "Technologies et Services",
+          "skills": [
+            "Docker",
+            "AWS S3",
+            "CI/CD",
+            "Git",
+            "PostgreSQL",
+            "SQlite",
+            "Protocol Buffers",
+            "Google Charts",
+            "Redis",
+            "Airflow",
+            "Postman",
+            "Unix"
+          ]
+        },
+        {
+          "title": "Team Cooperation",
+          "skills": [
+            "Agile/Scrum",
+            "Confluence",
+            "Jira",
+            "GitHub/GitLab",
+            "Code Reviews",
+            "Slack",
+            "Microsoft Teams"
+          ]
+        },
+        {
+          "title": "Documentation",
+          "skills": [
+            "Doxygen",
+            "Markdown",
+            "Pydoc",
+            "Javadoc",
+            "Confluence",
+            "Jira",
+            "LaTeX",
+            "Microsoft Suite"
+          ]
+        },
+        {
+          "title": "Science",
+          "skills": [
+            "Science Physique",
+            "Optique",
+            "Electronique",
+            "Cryogenie",
+            "Astronomie",
+            "Science de l'Espace"
+          ]
+        },
+        {
+          "title": "Social",
+          "skills": [
+            "Coopératif",
+            "Communicatif",
+            "Organisé",
+            "Innovant",
+            "Ingénieux"
           ]
         }
       ]
     }
   }
-
 }

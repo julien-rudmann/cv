@@ -6,7 +6,7 @@
       "page": {
         "tab": "Work Experiences",
         "title": "Work Experiences",
-        "subtitle": "Professional experiences in software engineering, data processing, and space technologies."
+        "subtitle": "Work experiences in software engineering, data processing, and space technologies."
       },
       "text": [],
       "articles": [
@@ -124,6 +124,16 @@
             }
           ]
         }
+      ]
+    },
+    "fr": {
+      "page": {
+        "tab": "Expériences Professionnelles",
+        "title": "Expériences Professionnelles",
+        "subtitle": "Expérience professionelles en informatique, traitement de données, et technologies spatiales."
+      },
+      "text": [
+        "TODO Ze Fr Version"
       ]
     }
   }

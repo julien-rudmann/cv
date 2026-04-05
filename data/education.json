@@ -60,6 +60,16 @@
           ]
         }
       ]
+    },
+    "fr": {
+      "page": {
+        "tab": "Études",
+        "title": "Études",
+        "subtitle": "Études académiques."
+      },
+      "text": [
+        "TODO FRENCH VERSION"
+      ]
     }
   }
 }

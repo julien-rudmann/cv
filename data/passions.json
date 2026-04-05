@@ -1,0 +1,24 @@
+{
+  "name": "passions",
+  "layout": "default",
+  "content": {
+    "en": {
+      "page": {
+        "tab": "Passions",
+        "title": "Passions"
+      },
+      "text": [
+        "TODO EN PASSIONS"
+      ]
+    },
+    "fr": {
+      "page": {
+        "tab": "Passions",
+        "title": "Passions"
+      },
+      "text": [
+        "TODO FR PASSIONS"
+      ]
+    }
+  }
+}

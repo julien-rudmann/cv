@@ -1,13 +1,11 @@
 {
   "name": "profile",
   "layout": "default",
-  "title": "About me.",
-  "subtitle": "",
   "content": {
     "en": {
       "page": {
         "tab": "Profile",
-        "title": "About me",
+        "title": "About me...",
         "subtitle": ""
       },
       "text": [
@@ -23,7 +21,7 @@
     "fr": {
       "page": {
         "tab": "Profil",
-        "title": "A propos.",
+        "title": "A propos de moi...",
         "subtitle": ""
       },
       "text": [

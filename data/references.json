@@ -1,0 +1,24 @@
+{
+  "name": "references",
+  "layout": "default",
+  "content": {
+    "en": {
+      "page": {
+        "tab": "References",
+        "title": "References"
+      },
+      "text": [
+        "TODO EN References"
+      ]
+    },
+    "fr": {
+      "page": {
+        "tab": "Références",
+        "title": "Références"
+      },
+      "text": [
+        "TODO FR References"
+      ]
+    }
+  }
+}
