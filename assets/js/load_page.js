@@ -346,16 +346,21 @@
 
             console.log(name);
 
-            var slide = createElement('div', 'swiper-slide');
-            var figure = createElement('figure', 'swiper-figure');
+            let slide = createElement('div', 'swiper-slide');
+            let figure = createElement('figure', 'swiper-figure');
+
             var img = document.createElement('img');
+
             img.className = 'swiper-photo';
             img.src = getPhotoUrl(folder, name);
             // Use the name as-is for the legend; it is already human-readable.
             img.alt = name;
             img.loading = 'lazy';
-            var caption = createElement('figcaption', 'swiper-caption', name);
+
             figure.appendChild(img);
+
+            var caption = createElement('figcaption', 'swiper-caption', name);
+
             figure.appendChild(caption);
             slide.appendChild(figure);
             wrapper.appendChild(slide);
@@ -389,6 +394,9 @@
                 slidesPerView: 1,
                 spaceBetween: 12,
                 loop: container.querySelectorAll('.swiper-slide').length > 1,
+                observer: true,
+                observeParents: true,
+                updateOnWindowResize: true,
                 keyboard: { enabled: true },
                 pagination: {
                     el: container.querySelector('.swiper-pagination'),
