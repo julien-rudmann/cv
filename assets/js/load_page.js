@@ -317,17 +317,17 @@
     // illustrations must be: { "folder": "travels", "photos": ["Paris", "London"] }
     // Each photo resolves to photos/<folder>/<name>.jpg and uses <name> as its legend.
     function renderIllustrations(illustrations) {
-        var folder, photos;
 
         if (!illustrations) {
             return null;
         }
 
+        let folder, photos;
+
         if (typeof illustrations === 'object' && !Array.isArray(illustrations)) {
             folder = illustrations.folder;
             photos = Array.isArray(illustrations.photos) ? illustrations.photos : [];
         } else {
-            // Plain string (folder only) — no photo list available, skip.
             return null;
         }
 
@@ -339,10 +339,13 @@
             return SITE_ROOT_URL + 'photos/' + encodeURIComponent(photoFolder) + '/' + encodeURIComponent(photoName) + '.jpg';
         }
 
-        var swiper = createElement('div', 'swiper article-swiper');
-        var wrapper = createElement('div', 'swiper-wrapper');
+        let swiper = createElement('div', 'swiper article-swiper');
+        let wrapper = createElement('div', 'swiper-wrapper');
 
         photos.forEach(function (name) {
+
+            console.log(name);
+
             var slide = createElement('div', 'swiper-slide');
             var figure = createElement('figure', 'swiper-figure');
             var img = document.createElement('img');
@@ -369,11 +372,12 @@
     // Initializes all Swiper sliders currently present in #page-content.
     // Called after renderPage() has appended all fragments to the DOM.
     function initSwipers() {
+
         if (typeof Swiper === 'undefined') {
             return;
         }
 
-        var containers = document.querySelectorAll('#page-content .article-swiper');
+        let containers = document.querySelectorAll('#page-content .article-swiper');
 
         Array.prototype.forEach.call(containers, function (container) {
             // Destroy any previous instance on language switch to avoid duplicates.
