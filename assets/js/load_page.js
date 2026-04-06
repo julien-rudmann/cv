@@ -8,18 +8,26 @@
  *
  * Supported JSON structure:
  * {
+ *   "name": "...",
+ *   "layout": "...",
  *   "content": {
  *     "en": {
  *       "page": { "tab": "...", "title": "...", "subtitle": "..." },
- *       "text": ["paragraph", ...],
- *       "groups": [{ "title": "...", "items": [...] }],
- *       "articles": [{ ... }],
- *       "cards": [{ ... }]
+ *       "text": ["...", "..."],
+ *       "articles": [{
+ *         "title": "...",
+ *         "company": "...",
+ *         "duration": "...",
+ *         "location": "..."
+ *         "description": "...",
+ *         "achievements": [...],
+ *         "skills": [...],
+ *         "highlights": [{ "title": "...", "description": "..." }]
+ *       }]
  *     }
  *   }
  * }
  *
- * Legacy top-level "title" / "subtitle" values are still accepted as fallbacks.
  */
 (function () {
 
@@ -38,6 +46,7 @@
 
     // Normalizes trusted rich text snippets coming from JSON.
     function normalizeRichText(value) {
+
         if (typeof value !== 'string') {
             return '';
         }
@@ -51,15 +60,15 @@
 
     // Converts HTML content to plain text, mainly for the document title.
     function htmlToText(value) {
-        var container = document.createElement('div');
+        let container = document.createElement('div');
         container.innerHTML = normalizeRichText(value);
         return (container.textContent || container.innerText || '').trim();
     }
 
     // Maps the current HTML page name to its JSON file name.
     function getPageId() {
-        var fileName = window.location.pathname.split('/').pop() || 'index.html';
-        var pageId = fileName.replace(/\.html$/i, '');
+        let fileName = window.location.pathname.split('/').pop() || 'index.html';
+        let pageId = fileName.replace(/\.html$/i, '');
 
         return pageId === 'index' ? 'profile' : pageId;
     }
@@ -71,7 +80,7 @@
 
     // Parses raw JSON text while tolerating an optional UTF-8 BOM.
     function parsePageData(text) {
-        var trimmed = text.replace(/^\uFEFF/, '').trim();
+        let trimmed = text.replace(/^\uFEFF/, '').trim();
 
         if (!trimmed) {
             return null;
@@ -93,9 +102,7 @@
 
     // Reads either a simple string value or a localized object with fallbacks.
     function getLocalizedValue(value, language, fallbacks) {
-        var languages;
-        var i;
-        var nextValue;
+
 
         if (value == null) {
             return '';
@@ -109,7 +116,10 @@
             return '';
         }
 
-        languages = [language].concat(fallbacks || []);
+        let languages = [language].concat(fallbacks || []);
+
+        let i;
+        let nextValue;
 
         for (i = 0; i < languages.length; i += 1) {
             nextValue = value[languages[i]];
@@ -119,6 +129,7 @@
         }
 
         languages = Object.keys(value);
+
         return languages.length ? value[languages[0]] : '';
     }
 
@@ -194,7 +205,8 @@
 
     // Small helper used to create HTML elements consistently.
     function createElement(tagName, className, html) {
-        var element = document.createElement(tagName);
+
+        let element = document.createElement(tagName);
 
         if (className) {
             element.className = className;
@@ -209,7 +221,7 @@
 
     // Appends one or more paragraphs to a parent node.
     function appendParagraphs(parent, values) {
-        var paragraphs = Array.isArray(values) ? values : [values];
+        let paragraphs = Array.isArray(values) ? values : [values];
 
         paragraphs.filter(Boolean).forEach(function (value) {
             parent.appendChild(createElement('p', '', normalizeRichText(value)));
@@ -218,57 +230,61 @@
 
     // Renders the top-level free-text section of a page.
     function renderTextSection(values) {
+
         if (!values || !values.length) {
             return null;
         }
 
-        var section = createElement('section', 'content-section');
+        let section = createElement('section', 'content-section');
+
         appendParagraphs(section, values);
+
         return section;
     }
 
     // Renders a shared pill/tag list used across multiple page types.
-    function renderTagList(items, className) {
+    function renderSkillsList(items) {
+
         if (!items || !items.length) {
             return null;
         }
 
-        var list = createElement('ul', 'tag-list' + (className ? ' ' + className : ''));
+        let list = createElement('ul', 'tag-list article-skill');
 
         items.forEach(function (item) {
-            var element = createElement('li');
-            element.innerHTML = normalizeRichText(item);
-            list.appendChild(element);
+            list.appendChild(createElement('li', '', normalizeRichText(item)));
         });
 
         return list;
     }
 
     // Renders a standard unordered list of bullet items.
-    function renderBulletList(items) {
+    function renderAchievementsList(items) {
+
         if (!items || !items.length) {
             return null;
         }
 
-        var list = createElement('ul', 'entry-list');
+        let list = createElement('ul', 'article-achievement');
 
         items.forEach(function (item) {
-            var element = createElement('li', '', normalizeRichText(item));
-            list.appendChild(element);
+            list.appendChild(createElement('li', '', normalizeRichText(item)));
         });
 
         return list;
     }
 
     // Renders highlighted callout boxes shown under some entries.
-    function renderHighlights(highlights) {
-        var fragment = document.createDocumentFragment();
+    function renderHighlightsList(highlights) {
+
+        let fragment = document.createDocumentFragment();
 
         (highlights || []).forEach(function (highlight) {
-            var box = createElement('div', 'entry-highlight');
+
+            let box = createElement('div', 'article-highlight');
 
             if (highlight.title) {
-                box.appendChild(createElement('h4', '', normalizeRichText(highlight.title)));
+                box.appendChild(createElement('h3', '', normalizeRichText(highlight.title)));
             }
 
             if (highlight.description) {
@@ -283,122 +299,53 @@
 
     // Renders one article-style card, used for experience/education/projects.
     function renderArticleCard(article) {
-        var card = createElement('article', 'card entry-card');
-        var tags;
-        var bullets;
+
+        let card = createElement('article', 'card article-card');
 
         if (article.title) {
             card.appendChild(createElement('h3', '', normalizeRichText(article.title)));
         }
 
         [article.company, article.duration, article.location].filter(Boolean).forEach(function (value) {
-            card.appendChild(createElement('p', 'entry-meta', normalizeRichText(value)));
+            card.appendChild(createElement('p', 'article-meta', normalizeRichText(value)));
         });
 
         if (article.description) {
             appendParagraphs(card, article.description);
         }
 
-        bullets = renderBulletList(article.achievements);
+        let bullets = renderAchievementsList(article.achievements);
+
         if (bullets) {
             card.appendChild(bullets);
         }
 
-        tags = renderTagList(article.skills, 'entry-tags');
+        let tags = renderSkillsList(article.skills);
+
         if (tags) {
             card.appendChild(tags);
         }
 
-        card.appendChild(renderHighlights(article.highlights));
+        card.appendChild(renderHighlightsList(article.highlights));
 
         return card;
     }
 
     // Renders a section containing multiple article cards.
     function renderArticleSection(values) {
+
         if (!values || !values.length) {
             return null;
         }
 
-        var section = createElement('section', 'content-section');
-        var list = createElement('div', 'card-list');
+        let section = createElement('section', 'content-section');
+        let list = createElement('div', 'card-list');
 
         values.forEach(function (value) {
             list.appendChild(renderArticleCard(value));
         });
 
         section.appendChild(list);
-        return section;
-    }
-
-    // Renders group items either as tags or as bullet points.
-    function renderGroupItems(items) {
-        if (!items || !items.length) {
-            return null;
-        }
-
-        if (typeof items[0] === 'string') {
-            return renderTagList(items, 'entry-tags');
-        }
-
-        return renderBulletList(items.map(function (item) {
-            if (typeof item === 'string') {
-                return item;
-            }
-
-            if (item.description) {
-                return '<b>' + normalizeRichText(item.title || '') + '</b>: ' + normalizeRichText(item.description);
-            }
-
-            return normalizeRichText(item.title || '');
-        }));
-    }
-
-    // Renders a group card, mainly intended for the Skills page structure.
-    function renderGroupCard(group) {
-
-        let card = createElement('article', 'card group-card');
-
-        let items;
-
-        if (group.title) {
-            card.appendChild(createElement('h3', '', normalizeRichText(group.title)));
-        }
-
-        if (group.description) {
-            appendParagraphs(card, group.description);
-        }
-
-        if (group.text) {
-            appendParagraphs(card, group.text);
-        }
-
-        items = renderGroupItems(group.items);
-
-        if (items) {
-            card.appendChild(items);
-        }
-
-        return card;
-    }
-
-    // Renders a section containing multiple group cards.
-    function renderGroupSection(values) {
-
-        // If no article to display, return early.
-        if (!values || !values.length) {
-            return null;
-        }
-
-        let section = createElement('section', 'content-section');
-        let div = createElement('div', 'card-list');
-
-        // Add each article card to the div
-        values.forEach(function (value) {
-            div.appendChild(renderGroupCard(value));
-        });
-
-        section.appendChild(div);
 
         return section;
     }
@@ -414,7 +361,7 @@
         let fallbackContent = fallbackLanguage ? data.content[fallbackLanguage] : null;
 
         let page = content && content.page ? content.page : {};
-        var fallbackPage = fallbackContent && fallbackContent.page ? fallbackContent.page : {};
+        let fallbackPage = fallbackContent && fallbackContent.page ? fallbackContent.page : {};
 
         return {
             tab: page.tab || fallbackPage.tab || page.title || fallbackPage.title || getLocalizedValue(data.title, language, [DEFAULT_LANGUAGE]),
@@ -475,8 +422,7 @@
         let fragments = [];
 
         fragments.push(renderTextSection(content.text));
-        fragments.push(renderGroupSection(content.groups));
-        fragments.push(renderArticleSection(content.articles || content.cards));
+        fragments.push(renderArticleSection(content.articles));
 
         fragments = fragments.filter(Boolean);
 
@@ -485,6 +431,7 @@
         }
 
         root.innerHTML = '';
+
         fragments.forEach(function (fragment) {
             root.appendChild(fragment);
         });

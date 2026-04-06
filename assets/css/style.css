@@ -201,30 +201,29 @@ h4 {
   display: block;
 }
 
-.entry-card h3,
-.group-card h3 {
+.article-card h3 {
   margin-bottom: 0.35rem;
 }
 
-.entry-meta {
+.article-meta {
   margin-bottom: 0.35rem;
   color: var(--muted);
 }
 
-.entry-list {
+.article-achievement {
   margin: 0;
   padding-left: 1.25rem;
 }
 
-.entry-list li + li {
+.article-achievement li + li {
   margin-top: 0.4rem;
 }
 
-.entry-tags {
+.article-skill {
   margin-top: 1rem;
 }
 
-.entry-highlight {
+.article-highlight {
   margin: 1rem 0;
   padding: 1rem;
   border: 1px solid var(--border);
@@ -232,7 +231,7 @@ h4 {
   background: var(--highlight-bg);
 }
 
-.entry-highlight h4 {
+.article-highlight h4 {
   margin-bottom: 0.35rem;
 }
 
