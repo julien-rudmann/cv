@@ -22,14 +22,19 @@
  * Legacy top-level "title" / "subtitle" values are still accepted as fallbacks.
  */
 (function () {
+
+    const NAV_PAGE_IDS = ['profile', 'experience', 'skills', 'education', 'references', 'passions', 'projects'];
+
     // Site-wide defaults and persisted language preference.
-    var DEFAULT_LANGUAGE = 'en';
-    var LANGUAGE_STORAGE_KEY = 'language';
-    var NAV_PAGE_IDS = ['profile', 'experience', 'skills', 'education', 'references', 'passions', 'projects'];
-    var selectedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY) || DEFAULT_LANGUAGE;
-    var pageDataCache = {};
-    var pageDataPromises = {};
-    var pageData = null;
+    const DEFAULT_LANGUAGE = 'en';
+    const LANGUAGE_STORAGE_KEY = 'language';
+
+    let selectedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY) || DEFAULT_LANGUAGE;
+
+    let pageDataCache = {};
+    let pageDataPromises = {};
+
+    let pageData = null;
 
     // Normalizes trusted rich text snippets coming from JSON.
     function normalizeRichText(value) {
@@ -138,7 +143,7 @@
 
     // Returns the content block that best matches the requested language.
     function getContentForLanguage(data, language) {
-        var availableLanguages = getAvailableLanguages(data);
+        let availableLanguages = getAvailableLanguages(data);
 
         if (!availableLanguages.length) {
             return null;
@@ -157,6 +162,7 @@
 
     // Loads a page JSON file once and caches the parsed payload for reuse.
     function fetchPageData(pageId) {
+
         if (pageDataCache[pageId]) {
             return Promise.resolve(pageDataCache[pageId]);
         }
@@ -170,16 +176,13 @@
                 if (!response.ok) {
                     throw new Error('Unable to load page data');
                 }
-
                 return response.text();
             })
             .then(function (text) {
-                var data = parsePageData(text);
-
+                let data = parsePageData(text);
                 if (data) {
                     pageDataCache[pageId] = data;
                 }
-
                 return data;
             })
             .catch(function () {
@@ -401,11 +404,16 @@
     }
 
     // Returns localized page metadata from content.<lang>.page with safe fallbacks.
-    function getPageMetadata(data, language, content) {
-        var availableLanguages = getAvailableLanguages(data);
-        var fallbackLanguage = data.content[DEFAULT_LANGUAGE] ? DEFAULT_LANGUAGE : availableLanguages[0];
-        var fallbackContent = fallbackLanguage ? data.content[fallbackLanguage] : null;
-        var page = content && content.page ? content.page : {};
+    function getPageMetadata(data, language) {
+
+        let availableLanguages = getAvailableLanguages(data);
+
+        let content = getContentForLanguage(data, language);
+
+        let fallbackLanguage = data.content[DEFAULT_LANGUAGE] ? DEFAULT_LANGUAGE : availableLanguages[0];
+        let fallbackContent = fallbackLanguage ? data.content[fallbackLanguage] : null;
+
+        let page = content && content.page ? content.page : {};
         var fallbackPage = fallbackContent && fallbackContent.page ? fallbackContent.page : {};
 
         return {
@@ -413,53 +421,6 @@
             title: page.title || fallbackPage.title || getLocalizedValue(data.title, language, [DEFAULT_LANGUAGE]),
             subtitle: page.subtitle || fallbackPage.subtitle || getLocalizedValue(data.subtitle, language, [DEFAULT_LANGUAGE])
         };
-    }
-
-    // Updates sidebar navigation labels using each page's localized page.tab value.
-    function updateNavigationTabs(language) {
-        var links = document.querySelectorAll('.sidebar-nav [data-page-id]');
-
-        Array.prototype.forEach.call(links, function (link) {
-            var pageId = link.getAttribute('data-page-id');
-            var defaultLabel = link.getAttribute('data-default-label') || link.innerHTML;
-
-            if (NAV_PAGE_IDS.indexOf(pageId) === -1) {
-                return;
-            }
-
-            fetchPageData(pageId).then(function (data) {
-                var content;
-                var metadata;
-                var label = defaultLabel;
-
-                if (data && data.content) {
-                    content = getContentForLanguage(data, language);
-                    metadata = getPageMetadata(data, language, content);
-
-                    if (metadata.tab) {
-                        label = metadata.tab;
-                    }
-                }
-
-                link.innerHTML = normalizeRichText(label);
-            });
-        });
-    }
-
-    // Marks the current page entry as active in the sidebar navigation.
-    function updateActiveNavigationTab() {
-        var currentPageId = getPageId();
-        var links = document.querySelectorAll('.sidebar-nav [data-page-id]');
-
-        Array.prototype.forEach.call(links, function (link) {
-            var isActive = link.getAttribute('data-page-id') === currentPageId;
-            link.classList.toggle('active', isActive);
-            if (isActive) {
-                link.setAttribute('aria-current', 'page');
-            } else {
-                link.removeAttribute('aria-current');
-            }
-        });
     }
 
     // Updates the page header and browser title from localized JSON data.
@@ -481,33 +442,7 @@
         }
     }
 
-    // Keeps the language button aligned with the current renderable languages.
-    function updateLanguageToggle(data, renderedLanguage) {
-        var button = document.getElementById('language-toggle');
-        var label = button ? button.querySelector('.language-toggle-label') : null;
-        var text = button ? button.querySelector('.language-toggle-text') : null;
-        var availableLanguages = getAvailableLanguages(data);
-        var canToggle = availableLanguages.length > 1;
-        var currentLanguage = renderedLanguage || selectedLanguage;
-        var nextLanguage = currentLanguage === 'fr' ? 'en' : 'fr';
 
-        if (!button) {
-            return;
-        }
-
-        button.disabled = !canToggle;
-        button.setAttribute('aria-pressed', String(currentLanguage === 'fr'));
-        button.setAttribute('aria-label', canToggle ? 'Switch language to ' + nextLanguage.toUpperCase() : 'Single language available');
-        button.setAttribute('title', canToggle ? 'Switch language to ' + nextLanguage.toUpperCase() : 'Single language available');
-
-        if (label) {
-            label.textContent = nextLanguage.toUpperCase();
-        }
-
-        if (text) {
-            text.textContent = canToggle ? 'Switch language to ' + nextLanguage.toUpperCase() : 'Single language available';
-        }
-    }
 
     // Replaces page content with the JSON-rendered version for the active language.
     function renderPage(data) {
@@ -573,19 +508,23 @@
 
     // Wires the language button and persists the chosen language.
     function initLanguageToggle() {
-        var button = document.getElementById('language-toggle');
+
+        let button = document.getElementById('language-toggle');
 
         if (!button) {
             return;
         }
 
         button.addEventListener('click', function () {
+
             if (button.disabled) {
                 return;
             }
 
             selectedLanguage = selectedLanguage === 'fr' ? 'en' : 'fr';
+
             localStorage.setItem(LANGUAGE_STORAGE_KEY, selectedLanguage);
+
             updateNavigationTabs(selectedLanguage);
 
             if (pageData) {
@@ -596,10 +535,90 @@
         updateLanguageToggle(null, selectedLanguage);
     }
 
+    // Keeps the language button aligned with the current renderable languages.
+    function updateLanguageToggle(data, renderedLanguage) {
+
+        let button = document.getElementById('language-toggle');
+
+        let label = button ? button.querySelector('.language-toggle-label') : null;
+        let text = button ? button.querySelector('.language-toggle-text') : null;
+
+        let availableLanguages = getAvailableLanguages(data);
+
+        let canToggle = availableLanguages.length > 1;
+        let currentLanguage = renderedLanguage || selectedLanguage;
+
+        let nextLanguage = currentLanguage === 'fr' ? 'en' : 'fr';
+
+        if (!button) {
+            return;
+        }
+
+        button.disabled = !canToggle;
+
+        button.setAttribute('aria-pressed', String(currentLanguage === 'fr'));
+        button.setAttribute('aria-label', canToggle ? 'Switch language to ' + nextLanguage.toUpperCase() : 'Single language available');
+        button.setAttribute('title', canToggle ? 'Switch language to ' + nextLanguage.toUpperCase() : 'Single language available');
+
+        if (label) {
+            label.textContent = nextLanguage.toUpperCase();
+        }
+
+        if (text) {
+            text.textContent = canToggle ? 'Switch language to ' + nextLanguage.toUpperCase() : 'Single language available';
+        }
+    }
+
+    // Updates sidebar navigation labels using each page's localized page.tab value and set the active tab class
+    function updateNavigationTabs(language) {
+
+        let currentPageId = getPageId();
+
+        // Get each tab of the navigation panel
+        let links = document.querySelectorAll('.sidebar-nav [data-page-id]');
+
+        Array.prototype.forEach.call(links, function (link) {
+
+            let pageId = link.getAttribute('data-page-id');
+            let defaultLabel = link.getAttribute('data-default-label') || link.innerHTML;
+
+            // Check if the page is valid
+            if (NAV_PAGE_IDS.indexOf(pageId) === -1) {
+                return;
+            }
+
+            fetchPageData(pageId).then(function (data) {
+
+                let metadata;
+                let label = defaultLabel;
+
+                if (data && data.content) {
+
+                    metadata = getPageMetadata(data, language);
+
+                    if (metadata.tab) {
+                        label = metadata.tab;
+                    }
+                }
+
+                link.innerHTML = normalizeRichText(label);
+            });
+
+            let isActive = pageId === currentPageId;
+
+            link.classList.toggle('active', isActive);
+
+            if (isActive) {
+                link.setAttribute('aria-current', 'page');
+            } else {
+                link.removeAttribute('aria-current');
+            }
+        });
+    }
+
     // Main entry point for JSON page rendering.
     function initPageLoader() {
         initLanguageToggle();
-        updateActiveNavigationTab();
         updateNavigationTabs(selectedLanguage);
         loadPage();
     }
