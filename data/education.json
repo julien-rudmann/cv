@@ -6,7 +6,7 @@
       "page": {
         "tab": "Education",
         "title": "Education",
-        "subtitle": "Education and training."
+        "subtitle": "This page displays my academic journey."
       },
       "text": [],
       "articles": [
@@ -65,10 +65,59 @@
       "page": {
         "tab": "Études",
         "title": "Études",
-        "subtitle": "Études académiques."
+        "subtitle": "Cette page affiche mon cursus académique."
       },
-      "text": [
-        "TODO FRENCH VERSION"
+      "text": [],
+      "articles": [
+        {
+          "title": "Master <b>Techniques Spatiales et Instrumentation</b>",
+          "company": "Université Paul Sabatier",
+          "duration": "2012",
+          "location": "Toulouse, France",
+          "description": "Axé sur l’astrophysique, les techniques spatiales et l’instrumentation, ce master vise à préparer des étudiants disposant de solides bases en physique à devenir des ingénieurs du domaine spatial.",
+          "achievements": [],
+          "skills": [
+            "Optique",
+            "Électronique",
+            "Astrophysique",
+            "Cryogénie",
+            "Astronomie",
+            "Informatique"
+          ],
+          "highlights": []
+        },
+        {
+          "title": "Licence de <b>Physique Fondamentale</b>",
+          "company": "Université Paul Sabatier",
+          "duration": "2010",
+          "location": "Toulouse, France",
+          "description": "Consacrée à l’étude de la physique fondamentale moderne, de ses théories et de ses applications.",
+          "achievements": [],
+          "skills": [
+            "Optique",
+            "Électromagnétisme",
+            "Mécanique quantique",
+            "Physique non linéaire",
+            "Mécanique des fluides",
+            "Physique nucléaire"
+          ],
+          "highlights": []
+        },
+        {
+          "title": "Baccalauréat <b>Scientifique</b>",
+          "company": "Lycée Saint-Sernin",
+          "duration": "2006",
+          "location": "Toulouse, France",
+          "description": "Branche scientifique du baccalauréat français, couvrant un large éventail de disciplines scientifiques.",
+          "achievements": [],
+          "skills": [
+            "Mathématiques",
+            "Physique",
+            "Chimie",
+            "Biologie",
+            "Technologies"
+          ]
+        }
       ]
     }
   }

@@ -132,8 +132,94 @@
         "title": "Expériences Professionnelles",
         "subtitle": "Expérience professionelles en informatique, traitement de données, et technologies spatiales."
       },
-      "text": [
-        "TODO Ze Fr Version"
+      "text": [],
+      "articles": [
+        {
+          "title": "Développeur Full Stack Senior",
+          "company": "<a href=\"https://remote.com/\">Remote</a> · Temps plein",
+          "duration": "Juil. 2022 – Présent",
+          "location": "Haute-Savoie, France",
+          "description": "",
+          "achievements": [
+            "Employé via Remote depuis Juillet 2022, je poursuis mon travail pour Ito World depuis la région genevoise tout en développant davantage la <b>collaboration</b> à distance et de le dévelopement logiciel à l’<b>international</b>."
+          ],
+          "skills": ["Slack", "Microsoft Teams", "Agile/Scrum", "Confluence", "Jira"],
+          "highlights": []
+        },
+        {
+          "title": "Développeur Full Stack Senior",
+          "company": "<a href=\"https://www.itoworld.com/\">Ito World</a> · Temps plein",
+          "duration": "Nov. 2016 – Présent",
+          "location": "Cambridge, Royaume-Uni",
+          "description": "",
+          "achievements": [
+            "Développé et maintenu des applications <b>scalables, efficaces et fiables</b> en <b>Python, Java et C++</b> pour plusieurs produits d’Ito World, utilisés dans de nombreuses villes et plusieurs pays, avec un accent sur <b>les informations voyageurs en temps réel</b> et le <b>traitement de données de mobilité fondé sur des standards</b>.",
+            "Conçu un pipeline <b>C++</b> qui ingère des données provenant de flux temps réel et archive les données sur <b>AWS S3</b> pour l’analyse, la relecture historique et la reproductibilité.",
+            "Amélioré et maintenu un <b>pipeline temps réel C++</b> principal qui ingère des flux de transport en temps réel tels que les <b>prédictions aux arrêts</b>, les <b>positions des véhicules</b> et les <b>perturbations de service</b>, les associe aux données horaires théoriques et publie des mises à jour <b>GTFS-RT</b> pour les produits en aval et les intégrations clients.",
+            "Conçu et implémenté un <b>serveur d’API REST en C++</b> connecté à la plateforme temps réel principale, exposant des endpoints <b>conformes à SIRI</b> ainsi que des workflows d’abonnement pour des systèmes orientés client alimentant des <b>panneaux d'affichage'</b> dans plusieurs localités du Royaume-Uni.",
+            "Contribué à une <b>plateforme mondiale de vélos (et trotinnettes) en libre-service</b> combinant un <b>pipeline d’ingestion de flux en C++</b>, un <b>backend Django</b> et un <b>frontend Angular</b> pour les données de disponibilité, de tarification et de réservation.",
+            "Ajouté et maintenu des <b>tests unitaires</b> pour des composants C++ à l’aide des frameworks <b>Google Test</b> et <b>Google Mock</b>, améliorant la <b>fiabilité, la couverture de tests et la maintenabilité</b> du code."
+          ],
+          "skills": ["C++", "Python", "Java", "CI/CD", "GitLab", "AWS S3", "Redis", "PostgreSQL", "Docker"],
+          "highlights": [
+            {
+              "title": "<a href=\"https://gtfs.org/documentation/realtime/reference/\">GTFS-RT</a>",
+              "description": "Un flux GTFS Realtime permet aux opérateurs de transport de fournir aux usagers des informations en temps réel sur les perturbations de service (stations fermées, lignes non exploitées, retards importants, etc.), la position de leurs véhicules et les heures d’arrivée prévues."
+            },
+            {
+              "title": "<a href=\"https://transmodel-cen.eu/index.php/siri/\">SIRI</a>",
+              "description": "SIRI (Standard Interface for Real-time Information) est une norme d’échange d’informations en temps réel entre les opérateurs de transport public et les usagers. Elle fournit une interface commune pour des données temps réel telles que la localisation des véhicules, les alertes de service et l’information voyageurs."
+            }
+          ]
+        },
+        {
+          "title": "Développeur Full Stack Junior",
+          "company": "<a href=\"https://www.irap.omp.eu/en/homepage-en/\">IRAP</a> · Prestataire",
+          "duration": "Oct. 2012 - Nov. 2016 · 4 ans 2 mois",
+          "location": "Toulouse, France",
+          "description": "",
+          "achievements": [
+            "Développé et maintenu des <b>logiciels du segment sol</b> en <b>C++</b> selon une approche <b>orientée objet</b> pour les instruments <b>XGRE</b> et <b>IDEE</b> de la mission scientifique satellite TARANIS.",
+            "Utilisé <b>Valgrind</b> et <b>GDB</b> pour analyser, déboguer et améliorer les <b>performances</b> et la <b>fiabilité</b> des composants logiciels.",
+            "Traité et enregistré les données instrumentales dans des fichiers <b>CDF (Common Data Format)</b> définis par la <b>NASA</b>.",
+            "Conçu du code source mutualisé et des bibliothèques communes pour soutenir le développement parallèle des logiciels XGRE et IDEE, en améliorant la <b>réutilisabilité</b> et la <b>maintenabilité</b> du code.",
+            "Développé des <b>interfaces graphiques</b> en <b>IDL</b> selon une approche orientée objet pour soutenir l’intégration de la charge utile, les activités opérationnelles, la visualisation de données et les essais scientifiques.",
+            "Contribué aux <b>activités d’intégration</b> de l’instrument IDEE, y compris dans des <b>environnements en salle blanche</b>, en collaboration avec les équipes d’intégration afin de fournir des outils pratiques et intuitifs.",
+            "Veillé au respect des <b>standards de développement du CNES</b> et rédigé des <b>manuels utilisateur</b> pour les logiciels livrés."
+          ],
+          "skills": ["C++", "IDL", "Valgrind", "GDB", "CDF"],
+          "highlights": [
+            {
+              "title": "<a href=\"https://cnes.fr/projets/taranis\">TARANIS</a>",
+              "description": "TARANIS devait être le premier satellite dédié à l’observation et à la caractérisation des phénomènes lumineux, radiatifs et électromagnétiques se produisant entre 20 et 100 km d’altitude au-dessus des orages. Son lancement par la fusée Vega depuis le centre spatial de Kourou a malheureusement échoué le 17 novembre 2020."
+            },
+            {
+              "title": "<a href=\"https://cdf.gsfc.nasa.gov/\">CDF</a>",
+              "description": "CDF (Common Data Format) est un format standard de données scientifiques développé par la NASA. Il est largement utilisé dans la communauté des sciences spatiales pour l’échange et l’archivage de données."
+            }
+          ]
+        },
+        {
+          "title": "Stage de fin d’études",
+          "company": "CNES",
+          "location": "Toulouse, France",
+          "duration": "Mars 2012 - Sept. 2012 · 7 mois",
+          "description": "",
+          "achievements": [
+            "Développé un <b>prototype de laser stabilisé</b> pour le <b>refroidissement d’atomes</b> de rubidium dans le cadre de la mission <b>STE-QUEST</b>, afin de soutenir le développement d’une source d’<b>interféromètre atomique</b>.",
+            "Conçu, assemblé et caractérisé un <b>banc optique de pointe</b> pour le <b>verrouillage par injection</b> de sources laser.",
+            "Étudié et caractérisé un cristal PPLN (Periodically Poled Lithium Niobate) pour la <b>conversion non linéaire de longueur d’onde</b> et le doublement de fréquence laser.",
+            "Conçu un <b>système d’asservissement PID</b> électronique afin de stabiliser la fréquence de la source laser maître en corrigeant les dérives dues aux <b>variations de température, de courant et de tension</b>.",
+            "Contribué à des travaux expérimentaux combinant <b>optique, électronique et stabilisation laser</b> dans un contexte de recherche spatiale."
+          ],
+          "skills": ["Physique", "Optique", "Électronique", "Suite Microsoft", "LaTeX"],
+          "highlights": [
+            {
+              "title": "<a href=\"https://fr.wikipedia.org/wiki/STE-QUEST\">STE-QUEST</a>",
+              "description": "Space-Time Explorer and Quantum Equivalence Principle Space Test (STE-QUEST) était une mission satellitaire proposée pour tester le principe d’équivalence d’Einstein avec une grande précision et rechercher de nouveaux constituants fondamentaux ainsi que de nouvelles interactions dans l’Univers. Elle devait embarquer un interféromètre atomique."
+            }
+          ]
+        }
       ]
     }
   }
