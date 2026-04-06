@@ -1,0 +1,86 @@
+{
+  "name": "interests",
+  "layout": "default",
+  "content": {
+    "en": {
+      "page": {
+        "tab": "Interests",
+        "title": "Interests"
+      },
+      "text": [],
+      "articles": [
+        {
+          "title": "Science",
+          "description": "I have always been interested in sciences, particularly in astronomy and physics. Growing up I also started working on tiny programming projects, in QBasic on Windows 98, for example to create a Rock, Paper, Scissors game based on a random number. Recently I am also keeping an eye on the (relatively) recent developments of neural networks and AI, which is rapidly changing the way we work as Software Developers.",
+          "skills": [
+            "Astronomy",
+            "Physics",
+            "Programming",
+            "AI"
+          ]
+        },
+        {
+          "title": "Sports and Nature",
+          "description": "I had the chance to grow up very close to the Bouconne forest near Toulouse, and I have always been fascinated by the beauty of nature. Now that I am living in the genevois, I have even more opportunities to hike and ski.",
+          "skills": [
+            "Hiking",
+            "Skiing",
+            "Swimming"
+          ]
+        },
+        {
+          "title": "Travels",
+          "description": "I had the chance to visit many countries (and cities) around the world, and I have always been curious about different cultures and ways of life.",
+          "skills": [
+            "France",
+            "United Kingdom",
+            "Switzerland",
+            "Rome",
+            "Florence",
+            "Amsterdam",
+            "Dublin",
+            "Barcelona",
+            "Stockholm"
+          ],
+          "illustrations": "travels"
+        },
+        {
+          "title": "Arts",
+          "description": "Movies, Series, Books, Music... there are no better way to express yourself than by sharing them.",
+          "illustrations": "arts",
+          "skills": [
+            "Maxime Chattam",
+            "David Gemmell",
+            "Hans Zimmer",
+            "Science Fiction",
+            "Fantasy",
+            "Solar Punk",
+            "Electro",
+            "Dance"
+          ]
+        },
+        {
+          "title": "Entertainments",
+          "description": "What I like to do in my free time...",
+          "skills": [
+            "Video Games",
+            "Board Games",
+            "City Builders",
+            "Strategy",
+            "Survival",
+            "MMOs"
+          ]
+        }
+
+      ]
+    },
+    "fr": {
+      "page": {
+        "tab": "Intérêts",
+        "title": "Intérêts"
+      },
+      "text": [],
+      "articles": []
+    }
+  }
+}

@@ -31,7 +31,7 @@
  */
 (function () {
 
-    const NAV_PAGE_IDS = ['profile', 'experience', 'skills', 'education', 'references', 'passions', 'projects'];
+    const NAV_PAGE_IDS = ['profile', 'experience', 'skills', 'education', 'references', 'interests', 'projects'];
 
     // Site-wide defaults and persisted language preference.
     const DEFAULT_LANGUAGE = 'en';
