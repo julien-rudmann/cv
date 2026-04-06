@@ -5,19 +5,33 @@
     "en": {
       "page": {
         "tab": "References",
-        "title": "References"
+        "title": "References",
+        "subtitle": "This page lists my professional references. For more details on how to contact them, please find us on <a href=\"https://www.linkedin.com/\">LinkedIn</a>."
       },
-      "text": [
-        "TODO EN References"
+      "text": [],
+      "articles": [
+        {
+          "title": "Nathalie BABY",
+          "company": "<a href=\"https://www.irap.omp.eu/en/homepage-en/\">IRAP</a>",
+          "duration": "Supervisor",
+          "location": "Toulouse, France"
+        }
       ]
     },
     "fr": {
       "page": {
         "tab": "Références",
-        "title": "Références"
+        "title": "Références",
+        "subtitle": "Cette page liste mes références professionnelles. Pour plus de détails sur comment les contacter, veuillez nous retrouver sur <a href=\"https://www.linkedin.com/\">LinkedIn</a>."
       },
-      "text": [
-        "TODO FR References"
+      "text": [],
+      "articles": [
+        {
+          "title": "Nathalie BABY",
+          "company": "<a href=\"https://www.irap.omp.eu/en/homepage-en/\">IRAP</a>",
+          "duration": "Superviseur",
+          "location": "Toulouse, France"
+        }
       ]
     }
   }
