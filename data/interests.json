@@ -54,8 +54,11 @@
               "Bondi Beach (Sydney, Australia)",
               "Cattedrale di Santa Maria del Fiore (Florence, Italy)",
               "Colosseo (Rome, Italy)",
+              "Ekotemplet (Stockholm, Sweden)",
               "Fontana Di Trevi (Rome, Italy)",
               "Glacier des Bossons (Chamonix, France)",
+              "Hagaparken (Stockholm, Sweden)",
+              "Hammarby Slussvag (Stockholm, Sweden)",
               "Hyde Park (Sydney, Australia)",
               "La Mer de Glace (Chamonix, France)",
               "Lac d'Annecy (Annecy, France)",
@@ -66,11 +69,14 @@
               "Mégève (Mégève, France)",
               "Roman Ruins (Rome, Italy)",
               "City Center from Taronga (Sydney, Australia)",
+              "Park Guell (Barcelona, Cataluna)",
+              "Port (Barcelona, Cataluna)",
+              "Sagrada Familia (Barcelona, Cataluna)",
+              "Sagrada Familia Interior (Barcelona, Cataluna)",
               "Sydney Harbour Bridge (Sydney, Australia)",
               "Sydney Opera (Sydney, Australia)",
               "Taronga Zoo (Sydney, Australia)",
               "Tower Bridge (London, United Kingdom)",
-              "Viaduc de Millau (Millau, France)",
               "View of Rome (Rome, Italy)",
               "Watsons Bay (Sydney, Australia)"
             ]
@@ -94,6 +100,9 @@
         {
           "title": "Entertainments",
           "description": "What I like to do in my free time...",
+          "illustrations": { "folder": "entertainments", "photos": [
+            "Yuki Gaming (Saint Julien en Genevois, France)"
+          ] },
           "skills": [
             "Video Games",
             "Board Games",
