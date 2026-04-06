@@ -39,6 +39,7 @@
             "Florence",
             "Amsterdam",
             "Dublin",
+            "Sydney",
             "Barcelona",
             "Stockholm"
           ],
@@ -63,15 +64,15 @@
               "Le Mont Blanc (Aiguille du Midi, France)",
               "Le Salève (Genevois, France)",
               "Mégève (Mégève, France)",
-              "Park (Sydney, Australia)",
               "Roman Ruins (Rome, Italy)",
-              "Sydney from Taronga (Sydney, Australia)",
+              "City Center from Taronga (Sydney, Australia)",
               "Sydney Harbour Bridge (Sydney, Australia)",
               "Sydney Opera (Sydney, Australia)",
-              "Taronga Zoo Sydney",
+              "Taronga Zoo (Sydney, Australia)",
               "Tower Bridge (London, United Kingdom)",
               "Viaduc de Millau (Millau, France)",
-              "View of Rome (Rome, Italy)"
+              "View of Rome (Rome, Italy)",
+              "Watsons Bay (Sydney, Australia)"
             ]
           }
         },

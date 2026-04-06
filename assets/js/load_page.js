@@ -344,29 +344,28 @@
 
         photos.forEach(function (name) {
 
-            console.log(name);
-
             let slide = createElement('div', 'swiper-slide');
             let figure = createElement('figure', 'swiper-figure');
 
-            var img = document.createElement('img');
+            let img = document.createElement('img');
 
             img.className = 'swiper-photo';
             img.src = getPhotoUrl(folder, name);
-            // Use the name as-is for the legend; it is already human-readable.
             img.alt = name;
             img.loading = 'lazy';
 
             figure.appendChild(img);
 
-            var caption = createElement('figcaption', 'swiper-caption', name);
+            let caption = createElement('figcaption', 'swiper-caption', name);
 
             figure.appendChild(caption);
+
             slide.appendChild(figure);
             wrapper.appendChild(slide);
         });
 
         swiper.appendChild(wrapper);
+
         swiper.appendChild(createElement('div', 'swiper-button-prev'));
         swiper.appendChild(createElement('div', 'swiper-button-next'));
         swiper.appendChild(createElement('div', 'swiper-pagination'));
