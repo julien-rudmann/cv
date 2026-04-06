@@ -367,11 +367,8 @@
         }
 
         if (group.text) {
-            console.log("HERE");
             appendParagraphs(card, group.text);
         }
-
-        console.log(group);
 
         items = renderGroupItems(group.items);
 
@@ -538,6 +535,8 @@
         updateHeader(data, renderedLanguage, content);
         updateLanguageToggle(data, renderedLanguage);
         updateNavigationTabs(renderedLanguage);
+
+        console.log(content);
 
         fragments.push(renderTextSection(content.text));
         fragments.push(renderGroupSection(content.groups));
