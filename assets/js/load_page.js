@@ -297,14 +297,6 @@
         return fragment;
     }
 
-    // Converts a raw photo filename to a readable legend.
-    // "my_photo-name" becomes "My Photo Name".
-    function photoNameToLegend(name) {
-        return name
-            .replace(/[-_]/g, ' ')
-            .replace(/\b\w/g, function (c) { return c.toUpperCase(); });
-    }
-
     // Renders a Swiper.js photo slider from an illustrations descriptor.
     // illustrations must be: { "folder": "travels", "photos": ["Paris", "London"] }
     // Each photo resolves to photos/<folder>/<name>.jpg and uses <name> as its legend.
@@ -335,10 +327,14 @@
             var figure = createElement('figure', 'swiper-figure');
             var img = document.createElement('img');
             img.className = 'swiper-photo';
-            img.src = 'photos/' + folder + '/' + name + '.jpg';
-            img.alt = photoNameToLegend(name);
+            // Use encodeURIComponent on each path segment so that photo names
+            // containing spaces, apostrophes or accented characters resolve
+            // correctly on GitHub Pages (e.g. "Lac d'Annecy (Annecy, France)").
+            img.src = 'photos/' + encodeURIComponent(folder) + '/' + encodeURIComponent(name) + '.jpg';
+            // Use the name as-is for the legend; it is already human-readable.
+            img.alt = name;
             img.loading = 'lazy';
-            var caption = createElement('figcaption', 'swiper-caption', photoNameToLegend(name));
+            var caption = createElement('figcaption', 'swiper-caption', name);
             figure.appendChild(img);
             figure.appendChild(caption);
             slide.appendChild(figure);

@@ -42,12 +42,43 @@
             "Barcelona",
             "Stockholm"
           ],
-          "illustrations": "travels"
+          "illustrations": {
+            "folder": "travels",
+            "photos": [
+              "Aire (Saint Julien en Genevois, France)",
+              "Altare della Patria (Rome, Italy)",
+              "Altare della Patria by Night (Rome, Italy)",
+              "Basilica di San Pietro (Rome, Italy)",
+              "Bern (Bern, Switzerland)",
+              "Bondi Beach (Sydney, Australia)",
+              "Cattedrale di Santa Maria del Fiore (Florence, Italy)",
+              "Colosseo (Rome, Italy)",
+              "Fontana Di Trevi (Rome, Italy)",
+              "Glacier des Bossons (Chamonix, France)",
+              "Hyde Park (Sydney, Australia)",
+              "La Mer de Glace (Chamonix, France)",
+              "Lac d'Annecy (Annecy, France)",
+              "Lac d'Oo (Oo, France)",
+              "Le Genevois (Genevois, France)",
+              "Le Mont Blanc (Aiguille du Midi, France)",
+              "Le Salève (Genevois, France)",
+              "Mégève (Mégève, France)",
+              "Park (Sydney, Australia)",
+              "Roman Ruins (Rome, Italy)",
+              "Sydney from Taronga (Sydney, Australia)",
+              "Sydney Harbour Bridge (Sydney, Australia)",
+              "Sydney Opera (Sydney, Australia)",
+              "Taronga Zoo Sydney",
+              "Tower Bridge (London, United Kingdom)",
+              "Viaduc de Millau (Millau, France)",
+              "View of Rome (Rome, Italy)"
+            ]
+          }
         },
         {
           "title": "Arts",
           "description": "Movies, Series, Books, Music... there are no better way to express yourself than by sharing them.",
-          "illustrations": "arts",
+          "illustrations": { "folder": "arts", "photos": [] },
           "skills": [
             "Maxime Chattam",
             "David Gemmell",
