@@ -206,7 +206,7 @@ h4 {
 }
 
 .article-meta {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.1rem;
   color: var(--muted);
 }
 
@@ -224,15 +224,15 @@ h4 {
 }
 
 .article-highlight {
-  margin: 1rem 0;
+  margin: 0.25rem 0 0.25rem 0;
   padding: 1rem;
   border: 1px solid var(--border);
   border-radius: 12px;
   background: var(--highlight-bg);
 }
 
-.article-highlight h4 {
-  margin-bottom: 0.35rem;
+.article-highlight h3 {
+  font-size: 1.10rem;
 }
 
 .theme-dark-asset {
@@ -275,42 +275,9 @@ h4 {
   padding-right: 1rem;
 }
 
-.group-card h3 {
-  margin-bottom: 0.35rem;
-}
-
 .company-logo {
   margin-bottom: 0.75rem;
   font-size: 0.95rem;
-}
-
-.experience-meta,
-.skill-meta,
-.education-meta {
-  margin-bottom: 0.1rem;
-}
-
-.experience-highlight {
-  margin: 0.25rem 0 0.25rem 0;
-  padding: 1rem;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--highlight-bg);
-}
-
-.experience-highlight h3
-{
-  font-size: 1.10rem;
-}
-
-.experience-list {
-  margin-bottom: 1rem;
-}
-
-.experience-tags,
-.skill-tags,
-.education-tags {
-  margin-top: 1rem;
 }
 
 .tag-list {
