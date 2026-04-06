@@ -330,7 +330,7 @@
             // Use encodeURIComponent on each path segment so that photo names
             // containing spaces, apostrophes or accented characters resolve
             // correctly on GitHub Pages (e.g. "Lac d'Annecy (Annecy, France)").
-            img.src = 'photos/' + encodeURIComponent(folder) + '/' + encodeURIComponent(name) + '.jpg';
+            img.src = 'cv/photos/' + encodeURIComponent(folder) + '/' + encodeURIComponent(name) + '.jpg';
             // Use the name as-is for the legend; it is already human-readable.
             img.alt = name;
             img.loading = 'lazy';
