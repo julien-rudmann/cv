@@ -44,6 +44,22 @@
 
     let pageData = null;
 
+    // Derives the site root from the actual load_page.js script URL.
+    // This keeps dynamic fetches and image URLs working on GitHub Pages even
+    // when the site is served under a repository sub-path such as /cv/.
+    function getSiteRootUrl() {
+        const script = document.querySelector('script[src*="/assets/js/load_page.js"], script[src$="assets/js/load_page.js"]');
+        const fallbackBase = new URL('./', window.location.href).href;
+
+        if (!script || !script.src) {
+            return fallbackBase;
+        }
+
+        return script.src.replace(/assets\/js\/load_page\.js(?:\?.*)?$/, '');
+    }
+
+    const SITE_ROOT_URL = getSiteRootUrl();
+
     // Normalizes trusted rich text snippets coming from JSON.
     function normalizeRichText(value) {
 
@@ -75,7 +91,7 @@
 
     // Returns the data file path relative to the site root.
     function getDataUrl(pageId) {
-        return 'data/' + pageId + '.json';
+        return SITE_ROOT_URL + 'data/' + pageId + '.json';
     }
 
     // Parses raw JSON text while tolerating an optional UTF-8 BOM.
@@ -319,6 +335,10 @@
             return null;
         }
 
+        function getPhotoUrl(photoFolder, photoName) {
+            return SITE_ROOT_URL + 'photos/' + encodeURIComponent(photoFolder) + '/' + encodeURIComponent(photoName) + '.jpg';
+        }
+
         var swiper = createElement('div', 'swiper article-swiper');
         var wrapper = createElement('div', 'swiper-wrapper');
 
@@ -327,10 +347,7 @@
             var figure = createElement('figure', 'swiper-figure');
             var img = document.createElement('img');
             img.className = 'swiper-photo';
-            // Use encodeURIComponent on each path segment so that photo names
-            // containing spaces, apostrophes or accented characters resolve
-            // correctly on GitHub Pages (e.g. "Lac d'Annecy (Annecy, France)").
-            img.src = 'cv/photos/' + encodeURIComponent(folder) + '/' + encodeURIComponent(name) + '.jpg';
+            img.src = getPhotoUrl(folder, name);
             // Use the name as-is for the legend; it is already human-readable.
             img.alt = name;
             img.loading = 'lazy';
