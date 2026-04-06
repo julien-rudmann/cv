@@ -15,6 +15,36 @@
 
 <body>
 
+<div class="top-right-controls">
+    <div class="sidebar-links d-flex gap-4">
+        <a aria-label="Email" class="contact-link" href="mailto:rudmann.julien@proton.me" title="Email">
+            <i aria-hidden="true" class="bi bi-envelope-fill contact-icon-font theme-light-asset"></i>
+            <i aria-hidden="true" class="bi bi-envelope-fill contact-icon-font theme-dark-asset"></i>
+            <span class="visually-hidden">Email</span>
+        </a>
+        <a aria-label="GitHub" class="contact-link" href="https://github.com/julien-rudmann" title="GitHub">
+            <img alt="" aria-hidden="true" class="contact-icon-image theme-light-asset" src="{{ '/assets/logos/GitHub_Black.png' | relative_url }}">
+            <img alt="" aria-hidden="true" class="contact-icon-image theme-dark-asset" src="{{ '/assets/logos/GitHub_White.png' | relative_url }}">
+            <span class="visually-hidden">GitHub</span>
+        </a>
+        <a aria-label="LinkedIn" class="contact-link" href="https://www.linkedin.com/in/julien-rudmann-38a46682/" title="LinkedIn">
+            <img alt="" aria-hidden="true" class="contact-icon-image theme-light-asset" src="{{ '/assets/logos/LinkedIn_Black.png' | relative_url }}">
+            <img alt="" aria-hidden="true" class="contact-icon-image theme-dark-asset" src="{{ '/assets/logos/LinkedIn_White.png' | relative_url }}">
+            <span class="visually-hidden">LinkedIn</span>
+        </a>
+        <button aria-label="Switch language" class="language-toggle" disabled id="language-toggle" title="Switch language" type="button">
+            <span aria-hidden="true" class="language-toggle-label">EN</span>
+            <span class="visually-hidden language-toggle-text">Switch language</span>
+        </button>
+        <button aria-label="Switch display mode" class="theme-toggle" id="theme-toggle" title="Switch display mode" type="button">
+            <i aria-hidden="true" class="bi bi-moon-stars-fill theme-icon theme-light-asset"></i>
+            <i aria-hidden="true" class="bi bi-sun-fill theme-icon theme-dark-asset"></i>
+            <span class="visually-hidden theme-toggle-text">Switch theme</span>
+        </button>
+    </div>
+
+</div>
+
 <div class="container-fluid py-4 py-lg-5">
     <div class="row g-4 justify-content-center site-grid">
         <aside class="col-12 col-lg-4 col-xl-4 col-xxl-4">
@@ -35,34 +65,7 @@
                     <a class="nav-link" data-default-label="Projects" data-page-id="projects" href="{{ '/projects.html' | relative_url }}"></a>
                 </nav>
 
-                <div class="top-right-controls">
-                    <div class="sidebar-links d-flex gap-4">
-                        <a aria-label="Email" class="contact-link" href="mailto:rudmann.julien@proton.me" title="Email">
-                            <i aria-hidden="true" class="bi bi-envelope-fill contact-icon-font theme-light-asset"></i>
-                            <i aria-hidden="true" class="bi bi-envelope-fill contact-icon-font theme-dark-asset"></i>
-                            <span class="visually-hidden">Email</span>
-                        </a>
-                        <a aria-label="GitHub" class="contact-link" href="https://github.com/julien-rudmann" title="GitHub">
-                            <img alt="" aria-hidden="true" class="contact-icon-image theme-light-asset" src="{{ '/assets/logos/GitHub_Black.png' | relative_url }}">
-                            <img alt="" aria-hidden="true" class="contact-icon-image theme-dark-asset" src="{{ '/assets/logos/GitHub_White.png' | relative_url }}">
-                            <span class="visually-hidden">GitHub</span>
-                        </a>
-                        <a aria-label="LinkedIn" class="contact-link" href="https://www.linkedin.com/in/julien-rudmann-38a46682/" title="LinkedIn">
-                            <img alt="" aria-hidden="true" class="contact-icon-image theme-light-asset" src="{{ '/assets/logos/LinkedIn_Black.png' | relative_url }}">
-                            <img alt="" aria-hidden="true" class="contact-icon-image theme-dark-asset" src="{{ '/assets/logos/LinkedIn_White.png' | relative_url }}">
-                            <span class="visually-hidden">LinkedIn</span>
-                        </a>
-                    </div>
-                    <button aria-label="Switch language" class="language-toggle" disabled id="language-toggle" title="Switch language" type="button">
-                        <span aria-hidden="true" class="language-toggle-label">EN</span>
-                        <span class="visually-hidden language-toggle-text">Switch language</span>
-                    </button>
-                    <button aria-label="Switch display mode" class="theme-toggle" id="theme-toggle" title="Switch display mode" type="button">
-                        <i aria-hidden="true" class="bi bi-moon-stars-fill theme-icon theme-light-asset"></i>
-                        <i aria-hidden="true" class="bi bi-sun-fill theme-icon theme-dark-asset"></i>
-                        <span class="visually-hidden theme-toggle-text">Switch theme</span>
-                    </button>
-                </div>
+
 
             </div>
         </aside>
