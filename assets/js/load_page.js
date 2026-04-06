@@ -297,6 +297,94 @@
         return fragment;
     }
 
+    // Converts a raw photo filename to a readable legend.
+    // "my_photo-name" becomes "My Photo Name".
+    function photoNameToLegend(name) {
+        return name
+            .replace(/[-_]/g, ' ')
+            .replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+    }
+
+    // Renders a Swiper.js photo slider from an illustrations descriptor.
+    // illustrations must be: { "folder": "travels", "photos": ["Paris", "London"] }
+    // Each photo resolves to photos/<folder>/<name>.jpg and uses <name> as its legend.
+    function renderIllustrations(illustrations) {
+        var folder, photos;
+
+        if (!illustrations) {
+            return null;
+        }
+
+        if (typeof illustrations === 'object' && !Array.isArray(illustrations)) {
+            folder = illustrations.folder;
+            photos = Array.isArray(illustrations.photos) ? illustrations.photos : [];
+        } else {
+            // Plain string (folder only) — no photo list available, skip.
+            return null;
+        }
+
+        if (!folder || !photos.length) {
+            return null;
+        }
+
+        var swiper = createElement('div', 'swiper article-swiper');
+        var wrapper = createElement('div', 'swiper-wrapper');
+
+        photos.forEach(function (name) {
+            var slide = createElement('div', 'swiper-slide');
+            var figure = createElement('figure', 'swiper-figure');
+            var img = document.createElement('img');
+            img.className = 'swiper-photo';
+            img.src = 'photos/' + folder + '/' + name + '.jpg';
+            img.alt = photoNameToLegend(name);
+            img.loading = 'lazy';
+            var caption = createElement('figcaption', 'swiper-caption', photoNameToLegend(name));
+            figure.appendChild(img);
+            figure.appendChild(caption);
+            slide.appendChild(figure);
+            wrapper.appendChild(slide);
+        });
+
+        swiper.appendChild(wrapper);
+        swiper.appendChild(createElement('div', 'swiper-button-prev'));
+        swiper.appendChild(createElement('div', 'swiper-button-next'));
+        swiper.appendChild(createElement('div', 'swiper-pagination'));
+
+        return swiper;
+    }
+
+    // Initializes all Swiper sliders currently present in #page-content.
+    // Called after renderPage() has appended all fragments to the DOM.
+    function initSwipers() {
+        if (typeof Swiper === 'undefined') {
+            return;
+        }
+
+        var containers = document.querySelectorAll('#page-content .article-swiper');
+
+        Array.prototype.forEach.call(containers, function (container) {
+            // Destroy any previous instance on language switch to avoid duplicates.
+            if (container.swiper) {
+                container.swiper.destroy(true, true);
+            }
+
+            new Swiper(container, {
+                slidesPerView: 1,
+                spaceBetween: 12,
+                loop: container.querySelectorAll('.swiper-slide').length > 1,
+                keyboard: { enabled: true },
+                pagination: {
+                    el: container.querySelector('.swiper-pagination'),
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: container.querySelector('.swiper-button-next'),
+                    prevEl: container.querySelector('.swiper-button-prev')
+                }
+            });
+        });
+    }
+
     // Renders one article-style card, used for experience/education/projects.
     function renderArticleCard(article) {
 
@@ -324,6 +412,12 @@
 
         if (tags) {
             card.appendChild(tags);
+        }
+
+        var slider = renderIllustrations(article.illustrations);
+
+        if (slider) {
+            card.appendChild(slider);
         }
 
         card.appendChild(renderHighlightsList(article.highlights));
@@ -435,6 +529,9 @@
         fragments.forEach(function (fragment) {
             root.appendChild(fragment);
         });
+
+        // Initialize Swiper sliders now that the cards are in the DOM.
+        initSwipers();
     }
 
     // Fetches and parses the JSON data for the current page.
