@@ -353,8 +353,10 @@
 
     // Renders a group card, mainly intended for the Skills page structure.
     function renderGroupCard(group) {
-        var card = createElement('article', 'card group-card');
-        var items;
+
+        let card = createElement('article', 'card group-card');
+
+        let items;
 
         if (group.title) {
             card.appendChild(createElement('h3', '', normalizeRichText(group.title)));
@@ -365,10 +367,14 @@
         }
 
         if (group.text) {
+            console.log("HERE");
             appendParagraphs(card, group.text);
         }
 
+        console.log(group);
+
         items = renderGroupItems(group.items);
+
         if (items) {
             card.appendChild(items);
         }
@@ -378,18 +384,22 @@
 
     // Renders a section containing multiple group cards.
     function renderGroupSection(values) {
+
+        // If no article to display, return early.
         if (!values || !values.length) {
             return null;
         }
 
-        var section = createElement('section', 'content-section');
-        var list = createElement('div', 'card-list');
+        let section = createElement('section', 'content-section');
+        let div = createElement('div', 'card-list');
 
+        // Add each article card to the div
         values.forEach(function (value) {
-            list.appendChild(renderGroupCard(value));
+            div.appendChild(renderGroupCard(value));
         });
 
-        section.appendChild(list);
+        section.appendChild(div);
+
         return section;
     }
 
