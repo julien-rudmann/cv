@@ -106,13 +106,13 @@
           "skills": [
             "Video Games",
             "Board Games",
+            "D&D",
             "City Builders",
             "Strategy",
             "Survival",
             "MMOs"
           ]
         }
-
       ]
     },
     "fr": {
@@ -120,7 +120,7 @@
         "tab": "Intérêts",
         "title": "Intérêts"
       },
-      "text": [],
+      "text": ["TODO"],
       "articles": []
     }
   }
