@@ -124,7 +124,7 @@
 
     // Chooses the language that will actually be rendered for the page.
     function getRenderedLanguage(data) {
-        var availableLanguages = getAvailableLanguages(data);
+        let availableLanguages = getAvailableLanguages(data);
 
         if (!availableLanguages.length) {
             return null;
@@ -425,16 +425,19 @@
 
     // Updates the page header and browser title from localized JSON data.
     function updateHeader(data, language, content) {
-        var titleElement = document.querySelector('.page-title');
-        var subtitleElement = document.querySelector('.page-subtitle');
-        var pageMetadata = getPageMetadata(data, language, content);
-        var title = pageMetadata.title;
-        var subtitle = pageMetadata.subtitle;
+
+        let pageMetadata = getPageMetadata(data, language, content);
+
+        let titleElement = document.querySelector('#page-title');
+        let title = pageMetadata.title;
 
         if (titleElement && title) {
             titleElement.innerHTML = normalizeRichText(title);
             document.title = htmlToText(title) + ' | Julien Rudmann';
         }
+
+        let subtitleElement = document.querySelector('#page-subtitle');
+        let subtitle = pageMetadata.subtitle;
 
         if (subtitleElement) {
             subtitleElement.innerHTML = normalizeRichText(subtitle);
@@ -442,36 +445,34 @@
         }
     }
 
-
-
     // Replaces page content with the JSON-rendered version for the active language.
     function renderPage(data) {
-        var root = document.getElementById('page-content');
-        var renderedLanguage;
-        var content;
-        var fragments = [];
+
+        let root = document.getElementById('page-content');
 
         if (!root) {
             return;
         }
 
-        renderedLanguage = getRenderedLanguage(data);
+        let renderedLanguage = getRenderedLanguage(data);
 
         if (!renderedLanguage) {
             updateLanguageToggle(null, selectedLanguage);
             return;
         }
 
-        content = data.content[renderedLanguage];
+        let content = data.content[renderedLanguage];
 
         pageData = data;
         pageDataCache[getPageId()] = data;
+
         document.documentElement.setAttribute('lang', renderedLanguage);
-        updateHeader(data, renderedLanguage, content);
+
         updateLanguageToggle(data, renderedLanguage);
         updateNavigationTabs(renderedLanguage);
+        updateHeader(data, renderedLanguage, content);
 
-        console.log(content);
+        let fragments = [];
 
         fragments.push(renderTextSection(content.text));
         fragments.push(renderGroupSection(content.groups));
