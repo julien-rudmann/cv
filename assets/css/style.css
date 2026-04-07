@@ -34,8 +34,10 @@
 
 body {
   margin: 0;
+  min-height: 100vh;
   font-family: Inter, Arial, Helvetica, sans-serif;
-  background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
+  background: linear-gradient(180deg, var(--bg-start), var(--bg-end)) no-repeat center center fixed;
+  background-size: cover;
   color: var(--text);
   line-height: 1.6;
 }
@@ -85,9 +87,7 @@ a:hover {
 .page-subtitle,
 .page-footer,
 .company-logo,
-.experience-meta,
-.skill-meta,
-.education-meta {
+.card-meta {
   color: var(--muted);
 }
 
@@ -100,6 +100,7 @@ h4 {
 
 .site-name {
   white-space: nowrap;
+  text-align: center;
 }
 
 .sidebar-nav .nav-link {
