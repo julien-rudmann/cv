@@ -90,7 +90,15 @@
         {
           "title": "Arts",
           "description": "Movies, Series, Books, Music... there are no better way to express yourself than by sharing them.",
-          "illustrations": { "folder": "arts", "photos": [] },
+          "illustrations": {
+            "folder": "arts",
+            "photos": [
+              "Chambord Live 2024 - David Guetta (Chambord, France)",
+              "Guitare en Scene 2023 - Sting (Saint Julien en Genevois, France)",
+              "The World of Hans Zimmer 2022 (AlpExpo Geneva, Switzerland)",
+              "Summer Carnival 2024 - Pink (Stockholm, Sweden)"
+            ]
+          },
           "skills": [
             "Maxime Chattam",
             "David Gemmell",
@@ -105,9 +113,12 @@
         {
           "title": "Entertainments",
           "description": "What I like to do in my free time...",
-          "illustrations": { "folder": "entertainments", "photos": [
-            "Yuki Gaming (Saint Julien en Genevois, France)"
-          ] },
+          "illustrations": {
+            "folder": "entertainments",
+            "photos": [
+              "Yuki Gaming (Saint Julien en Genevois, France)"
+            ]
+          },
           "skills": [
             "Video Games",
             "Board Games",
@@ -125,7 +136,9 @@
         "tab": "Intérêts",
         "title": "Intérêts"
       },
-      "text": ["TODO"],
+      "text": [
+        "TODO"
+      ],
       "articles": []
     }
   }
