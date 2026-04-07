@@ -316,6 +316,7 @@ h4 {
 .article-swiper .swiper-wrapper,
 .article-swiper .swiper-slide {
   min-width: 0;
+  width: 100% !important;
 }
 
 .swiper-figure {
