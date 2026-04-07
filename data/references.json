@@ -15,6 +15,12 @@
           "company": "<a href=\"https://www.irap.omp.eu/en/homepage-en/\">IRAP</a>",
           "duration": "Supervisor",
           "location": "Toulouse, France"
+        },
+        {
+          "title": "<a href=\"https://www.linkedin.com/in/liviaclaudianicolae/?locale=en\">Livia Claudia NICOLAE</a>",
+          "company": "<a href=\"https://www.linkedin.com/company/ito-world/posts/?feedView=all\">Ito World</a>",
+          "duration": "Engineering Manager",
+          "location": "Remote, United Kingdom"
         }
       ]
     },
@@ -29,8 +35,14 @@
         {
           "title": "Nathalie BABY",
           "company": "<a href=\"https://www.irap.omp.eu/en/homepage-en/\">IRAP</a>",
-          "duration": "Superviseur",
+          "duration": "Supervisor",
           "location": "Toulouse, France"
+        },
+        {
+          "title": "<a href=\"https://www.linkedin.com/in/liviaclaudianicolae/?locale=en\">Livia Claudia NICOLAE</a>",
+          "company": "<a href=\"https://www.linkedin.com/company/ito-world/posts/?feedView=all\">Ito World</a>",
+          "duration": "Engineering Manager",
+          "location": "Remote, United Kingdom"
         }
       ]
     }
