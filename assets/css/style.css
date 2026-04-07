@@ -331,7 +331,7 @@ h4 {
 .swiper-photo {
   width: 100%;
   max-width: 100%;
-  max-height: 380px;
+  max-height: 520px;
   object-fit: cover;
   display: block;
 }
