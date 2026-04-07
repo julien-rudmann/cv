@@ -26,7 +26,20 @@
             "Hiking",
             "Skiing",
             "Swimming"
-          ]
+          ],
+          "illustrations": {
+            "folder": "sports",
+            "photos": [
+              "Aire (Saint Julien en Genevois, France)",
+              "Glacier des Bossons (Chamonix, France)",
+              "La Mer de Glace (Chamonix, France)",
+              "Lac d'Annecy (Annecy, France)",
+              "Lac d'Oo (Oo, France)",
+              "Le Genevois (Genevois, France)",
+              "Le Mont Blanc (Aiguille du Midi, France)",
+              "Le Salève (Genevois, France)"
+            ]
+          }
         },
         {
           "title": "Travels",
@@ -46,26 +59,18 @@
           "illustrations": {
             "folder": "travels",
             "photos": [
-              "Aire (Saint Julien en Genevois, France)",
               "Altare della Patria (Rome, Italy)",
               "Altare della Patria by Night (Rome, Italy)",
-              "Basilica di San Pietro (Rome, Italy)",
+              "Basilica di San Pietro (Vatican City, Italy)",
               "Bern (Bern, Switzerland)",
               "Bondi Beach (Sydney, Australia)",
               "Cattedrale di Santa Maria del Fiore (Florence, Italy)",
               "Colosseo (Rome, Italy)",
               "Ekotemplet (Stockholm, Sweden)",
               "Fontana Di Trevi (Rome, Italy)",
-              "Glacier des Bossons (Chamonix, France)",
               "Hagaparken (Stockholm, Sweden)",
               "Hammarby Slussvag (Stockholm, Sweden)",
               "Hyde Park (Sydney, Australia)",
-              "La Mer de Glace (Chamonix, France)",
-              "Lac d'Annecy (Annecy, France)",
-              "Lac d'Oo (Oo, France)",
-              "Le Genevois (Genevois, France)",
-              "Le Mont Blanc (Aiguille du Midi, France)",
-              "Le Salève (Genevois, France)",
               "Mégève (Mégève, France)",
               "Roman Ruins (Rome, Italy)",
               "City Center from Taronga (Sydney, Australia)",
