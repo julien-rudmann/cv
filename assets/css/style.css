@@ -91,6 +91,10 @@ a:hover {
   color: var(--muted);
 }
 
+.site-description {
+  text-align: justify;
+}
+
 .site-name,
 .page-title,
 h3,
