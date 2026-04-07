@@ -81,12 +81,10 @@
         return (container.textContent || container.innerText || '').trim();
     }
 
-    // Maps the current HTML page name to its JSON file name.
+    // Maps the current URL query parameter to its JSON file name.
     function getPageId() {
-        let fileName = window.location.pathname.split('/').pop() || 'index.html';
-        let pageId = fileName.replace(/\.html$/i, '');
-
-        return pageId === 'index' ? 'profile' : pageId;
+        let params = new URLSearchParams(window.location.search);
+        return params.get('page') || 'profile';
     }
 
     // Returns the data file path relative to the site root.
