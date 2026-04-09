@@ -42,7 +42,7 @@
           "company": "Software",
           "duration": "Python – PyScript",
           "location": "In Development with <a href=\"https://www.linkedin.com/in/baptiste-leforestier-50196369/\">Dr. Baptiste Leforestier</a>",
-          "description": "A Python-based simulator for the NLE (Non Linear Equations) used in chemistry.",
+          "description": "A Python-based simulator for the NLE (Non Linear Equations) used in chemistry. Thanks to <a href=\"https://github.com/fbergmann\">Frank Bergmann</a> for his help on the COPASI wheels.",
           "achievements": [
             "Developed a python based framework to use PyScript.",
             "Used Google Charts to display the evolution of products concentrations and ee over time.",
