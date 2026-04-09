@@ -7,8 +7,36 @@
         "tab": "Projects",
         "title": "Projects"
       },
-      "text": [
-        "TODO EN Projects"
+      "text": [],
+      "articles": [
+        {
+          "title": "Star Exodus",
+          "company": "Video Game",
+          "duration": "Unreal Engine 5 – C#",
+          "location": "Exploration and Design Phase",
+          "description": "Single player space real time strategy game (RTS) in which the player leads one civilization across the star in order to escape an unknown threat that seems to consume the stars.",
+          "achievements": [
+            "Created C# framework for the game's UI.",
+            "Developed functional title screen and options menu.",
+            "Developed RTS compatible camera system for top down view.",
+            "Generated multi-layer Perlin Noise based procedural meshes for the stars, planets and asteroids.",
+            "Designed complex systems for maximum replayability (biomes, random events, storylines...)"
+          ],
+          "skills": [
+            "Unreal Engine 5",
+            "C#",
+            "Space RTS",
+            "Game Design"
+          ],
+          "illustrations": {
+            "folder": "projects/star_exodus",
+            "photos": [
+              "Star Exodus Code (C#)",
+              "Star Exodus Options (Unreal Engine Editor - Play)",
+              "Star Exodus Title Screen (Unreal Engine Editor - Play)"
+            ]
+          }
+        }
       ]
     },
     "fr": {
