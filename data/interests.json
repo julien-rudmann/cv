@@ -11,7 +11,7 @@
       "articles": [
         {
           "title": "Science",
-          "description": "I have always been interested in sciences, particularly in astronomy and physics. Growing up I also started working on tiny programming projects, in QBasic on Windows 98, for example to create a Rock, Paper, Scissors game based on a random number. Recently I am also keeping an eye on the (relatively) recent developments of neural networks and AI, which is rapidly changing the way we work as Software Developers.",
+          "description": "I have always been interested in science, particularly astronomy and physics. Growing up, I also started working on small programming projects in QBasic on Windows 98, for example creating a Rock, Paper, Scissors game based on a random number. More recently, I have been keeping a close eye on developments in neural networks and AI, which are rapidly changing the way we work as software developers.",
           "skills": [
             "Astronomy",
             "Physics",
@@ -21,7 +21,7 @@
         },
         {
           "title": "Sports and Nature",
-          "description": "I had the chance to grow up very close to the Bouconne forest near Toulouse, and I have always been fascinated by the beauty of nature. Now that I am living in the genevois, I have even more opportunities to hike and ski.",
+          "description": "I had the chance to grow up very close to the Bouconne forest near Toulouse, and I have always been fascinated by the beauty of nature. Now that I live in the Genevois area, I have even more opportunities to go hiking and skiing.",
           "skills": [
             "Hiking",
             "Skiing",
@@ -43,7 +43,7 @@
         },
         {
           "title": "Travels",
-          "description": "I had the chance to visit many countries (and cities) around the world, and I have always been curious about different cultures and ways of life.",
+          "description": "I have had the opportunity to visit many countries and cities around the world, and I have always been curious about different cultures and ways of life.",
           "skills": [
             "France",
             "United Kingdom",
@@ -89,7 +89,7 @@
         },
         {
           "title": "Arts",
-          "description": "Movies, Series, Books, Music... there are no better way to express yourself than by sharing them.",
+          "description": "Movies, series, books, music... there are no better ways to express yourself than by sharing them.",
           "illustrations": {
             "folder": "arts",
             "photos": [
@@ -112,7 +112,7 @@
         },
         {
           "title": "Entertainments",
-          "description": "What I like to do in my free time...",
+          "description": "Some of the things I enjoy doing in my free time.",
           "illustrations": {
             "folder": "entertainments",
             "photos": [
@@ -141,10 +141,135 @@
         "tab": "Intérêts",
         "title": "Intérêts"
       },
-      "text": [
-        "TODO"
-      ],
-      "articles": []
+      "text": [],
+      "articles": [
+        {
+          "title": "Science",
+          "description": "J’ai toujours été passionné par les sciences, et en particulier par l’astronomie et la physique. En grandissant, j’ai aussi commencé à développer de petits projets de programmation en QBasic sous Windows 98, par exemple un jeu Pierre-Feuille-Ciseaux basé sur un tirage aléatoire. Aujourd’hui, je garde également un œil sur les développements récents de l’IA, qui transforment durablement ma façon de travailler.",
+          "skills": [
+            "Astronomy",
+            "Physics",
+            "Programming",
+            "AI"
+          ]
+        },
+        {
+          "title": "Sports et Nature",
+          "description": "J’ai eu la chance de grandir près de la forêt de Bouconne, à Toulouse, et j’ai toujours été fasciné par la beauté de la nature. Maintenant que je vis dans le Genevois, j’ai encore plus d’occasions de partir randonner et skier.",
+          "skills": [
+            "Hiking",
+            "Skiing",
+            "Swimming"
+          ],
+          "illustrations": {
+            "folder": "sports",
+            "photos": [
+              "Aire (Saint Julien en Genevois, France)",
+              "Glacier des Bossons (Chamonix, France)",
+              "La Mer de Glace (Chamonix, France)",
+              "Lac d'Annecy (Annecy, France)",
+              "Lac d'Oo (Oo, France)",
+              "Le Genevois (Genevois, France)",
+              "Le Mont Blanc (Aiguille du Midi, France)",
+              "Le Salève (Genevois, France)"
+            ]
+          }
+        },
+        {
+          "title": "Voyages",
+          "description": "J’ai eu l'opportunité de visiter de nombreux pays et villes à travers le monde, et j’ai toujours été curieux de découvrir différentes cultures et façons de vivre.",
+          "skills": [
+            "France",
+            "United Kingdom",
+            "Switzerland",
+            "Rome",
+            "Florence",
+            "Amsterdam",
+            "Dublin",
+            "Sydney",
+            "Barcelona",
+            "Stockholm"
+          ],
+          "illustrations": {
+            "folder": "travels",
+            "photos": [
+              "Altare della Patria (Rome, Italy)",
+              "Altare della Patria by Night (Rome, Italy)",
+              "Basilica di San Pietro (Vatican City, Italy)",
+              "Bern (Bern, Switzerland)",
+              "Bondi Beach (Sydney, Australia)",
+              "Cattedrale di Santa Maria del Fiore (Florence, Italy)",
+              "Colosseo (Rome, Italy)",
+              "Ekotemplet (Stockholm, Sweden)",
+              "Fontana Di Trevi (Rome, Italy)",
+              "Hagaparken (Stockholm, Sweden)",
+              "Hammarby Slussvag (Stockholm, Sweden)",
+              "Hyde Park (Sydney, Australia)",
+              "Mégève (Mégève, France)",
+              "Roman Ruins (Rome, Italy)",
+              "City Center from Taronga (Sydney, Australia)",
+              "Park Guell (Barcelona, Cataluna)",
+              "Port (Barcelona, Cataluna)",
+              "Sagrada Familia (Barcelona, Cataluna)",
+              "Sagrada Familia Interior (Barcelona, Cataluna)",
+              "Sydney Harbour Bridge (Sydney, Australia)",
+              "Sydney Opera (Sydney, Australia)",
+              "Taronga Zoo (Sydney, Australia)",
+              "Tower Bridge (London, United Kingdom)",
+              "View of Rome (Rome, Italy)",
+              "Watsons Bay (Sydney, Australia)"
+            ]
+          }
+        },
+        {
+          "title": "Culture",
+          "description": "Films, séries, livres, musique... j’aime prendre le temps de me cultiver et de découvrir de nouveaux univers.",
+          "illustrations": {
+            "folder": "arts",
+            "photos": [
+              "Chambord Live 2024 - David Guetta (Chambord, France)",
+              "Guitare en Scene 2023 - Sting (Saint Julien en Genevois, France)",
+              "The World of Hans Zimmer 2022 (AlpExpo Geneva, Switzerland)",
+              "Summer Carnival 2024 - Pink (Stockholm, Sweden)"
+            ]
+          },
+          "skills": [
+            "Maxime Chattam",
+            "David Gemmell",
+            "Hans Zimmer",
+            "Science Fiction",
+            "Fantasy",
+            "Solar Punk",
+            "Electro",
+            "Dance",
+            "Piano"
+          ]
+        },
+        {
+          "title": "Divertissements",
+          "description": "Quelques-unes des activités que j’apprécie pendant mon temps libre.",
+          "illustrations": {
+            "folder": "entertainments",
+            "photos": [
+              "Dune Awakening (Survival)",
+              "Endless Legend 2 (by Amplitude)",
+              "Guild Wars 2 (MMO)",
+              "Where Winds Meet (RPG)",
+              "Yuki Gaming (Best Cat Ever)"
+            ]
+          },
+          "skills": [
+            "Video Games",
+            "Board Games",
+            "D&D",
+            "RPG",
+            "City Builders",
+            "Strategy",
+            "Survival",
+            "MMOs"
+          ]
+        }
+      ]
     }
   }
 }
