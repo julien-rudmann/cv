@@ -22,6 +22,13 @@
           "company": "<a href=\"https://www.linkedin.com/company/ito-world/posts/?feedView=all\">Ito World</a>",
           "duration": "Engineering Manager",
           "location": "Remote, United Kingdom"
+        },
+        {
+          "title": "Shane REYNOLDS",
+          "url": "https://www.linkedin.com/in/shane-reynolds-65080820/",
+          "company": "<a href=\"https://www.linkedin.com/company/ito-world/posts/?feedView=all\">Ito World</a>",
+          "duration": "Chief Technology Officer",
+          "location": "Remote, United Kingdom"
         }
       ]
     },
@@ -36,14 +43,21 @@
         {
           "title": "Nathalie BABY",
           "company": "<a href=\"https://www.irap.omp.eu/en/homepage-en/\">IRAP</a>",
-          "duration": "Supervisor",
+          "duration": "Superviseur",
           "location": "Toulouse, France"
         },
         {
           "title": "Livia Claudia NICOLAE",
           "url": "https://www.linkedin.com/in/liviaclaudianicolae/?locale=en",
           "company": "<a href=\"https://www.linkedin.com/company/ito-world/posts/?feedView=all\">Ito World</a>",
-          "duration": "Engineering Manager",
+          "duration": "Responsable Ingénierie",
+          "location": "Remote, United Kingdom"
+        },
+        {
+          "title": "Shane REYNOLDS",
+          "url": "https://www.linkedin.com/in/shane-reynolds-65080820/",
+          "company": "<a href=\"https://www.linkedin.com/company/ito-world/posts/?feedView=all\">Ito World</a>",
+          "duration": "Directeur Technique",
           "location": "Remote, United Kingdom"
         }
       ]
