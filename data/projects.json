@@ -36,6 +36,31 @@
               "Star Exodus Title Screen (Unreal Engine Editor - Play)"
             ]
           }
+        },
+        {
+          "title": "NLE Simulator",
+          "company": "Software",
+          "duration": "Python – PyScript",
+          "location": "In Development with <a href=\"https://www.linkedin.com/in/baptiste-leforestier-50196369/\">Dr. Baptiste Leforestier</a>",
+          "description": "A Python-based simulator for the NLE (Non Linear Equations) used in chemistry.",
+          "achievements": [
+            "Developed a python based framework to use PyScript.",
+            "Used Google Charts to display the evolution of products concentrations and ee over time.",
+            "Involved in the chemistry behind all that (I am a physicist, chemistry is hard...)"
+          ],
+          "skills": [
+            "Python",
+            "PyScript",
+            "Google Charts",
+            "Frameworks"
+          ],
+          "illustrations": {
+            "folder": "projects/nle_simulator",
+            "photos": [
+              "NLE Simulator Code (Python)",
+              "NLE Simulator Front End (PyScript)"
+            ]
+          }
         }
       ]
     },
